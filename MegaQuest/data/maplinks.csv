@@ -1,0 +1,183 @@
+FromID,ToID,Direction,Description,Lockable,Locked,LockedDescription,Reversible,Hidden
+10000,1,NORTH,along a tunnel,FALSE,FALSE,,TRUE,FALSE
+10000,200,SOUTH,along a narrow passage way,FALSE,FALSE,,TRUE,FALSE
+10000,300,EAST,through a crack in the rock,FALSE,FALSE,,TRUE,FALSE
+1,2,NORTH,along a path,FALSE,,,TRUE,FALSE
+2,3,NORTH,following the ancient road,FALSE,,,TRUE,FALSE
+3,4,NORTH,following the ancient road,FALSE,,,TRUE,FALSE
+4,5,WEST,,FALSE,,,TRUE,FALSE
+5,6,WEST,along a track,FALSE,,,TRUE,FALSE
+6,8,SOUTH,through the trees,FALSE,,,TRUE,FALSE
+5,7,NORTH,through the trees,FALSE,,,TRUE,FALSE
+8,9,WEST,through the trees,FALSE,,,TRUE,FALSE
+9,10,WEST,,FALSE,,,TRUE,FALSE
+10,11,WEST,,FALSE,,,TRUE,FALSE
+11,12,NORTH,,FALSE,,,TRUE,FALSE
+11,13,SOUTH,,FALSE,,,TRUE,FALSE
+11,14,WEST,,TRUE,TRUE,the stone door is closed,TRUE,FALSE
+6,100,UP,via a wooden ladder,FALSE,,,TRUE,FALSE
+100,101,UP,via a wooden ladder,FALSE,,,TRUE,FALSE
+101,102,WEST,,FALSE,,,TRUE,FALSE
+102,103,NORTH,,FALSE,,,TRUE,FALSE
+102,104,SOUTH,,FALSE,,,TRUE,FALSE
+101,110,UP,via branches of the tree,FALSE,,,TRUE,FALSE
+4,20,EAST,through dense undergrowth,FALSE,,,TRUE,FALSE
+20,50,NORTH,through thick vegetation,FALSE,,,TRUE,FALSE
+20,21,EAST,through a tangle of brambles and bushes,FALSE,,,TRUE,FALSE
+21,22,DOWN,,FALSE,,,TRUE,FALSE
+22,23,DOWN,,FALSE,,,TRUE,FALSE
+23,24,NORTH,,FALSE,,,TRUE,FALSE
+23,25,EAST,,FALSE,,,TRUE,FALSE
+25,26,EAST,,FALSE,,,TRUE,FALSE
+21,27,SOUTH,,FALSE,,,TRUE,FALSE
+27,28,WEST,,FALSE,,,TRUE,FALSE
+27,30,SOUTH,,FALSE,,,TRUE,FALSE
+30,31,DOWN,,FALSE,,,TRUE,FALSE
+31,32,DOWN,via an old ladder,FALSE,,,TRUE,FALSE
+32,33,EAST,through a small hole in the wall,FALSE,,,TRUE,FALSE
+33,34,EAST,through a heavy iron culvert,TRUE,TRUE,the culvert is rusted shut,TRUE,FALSE
+40,41,DOWN,via some rough stone steps,FALSE,,,TRUE,FALSE
+41,42,EAST,across a very wide gap,FALSE,,,TRUE,FALSE
+42,43,SOUTH,through a tight crack in the rock,FALSE,,,TRUE,FALSE
+43,44,WEST,,TRUE,TRUE,there appears to be no way beyond here,TRUE,FALSE
+50,51,NORTH,,FALSE,,,TRUE,FALSE
+51,52,NORTH,,FALSE,,,TRUE,FALSE
+52,53,NORTH,through an archway,TRUE,TRUE,a locked gate bars the entrance,TRUE,FALSE
+53,54,NORTH,,FALSE,,,TRUE,FALSE
+54,55,UP,via some vines,FALSE,,,TRUE,FALSE
+54,56,NORTH,through an archway,TRUE,TRUE,a portcullis is lowered preventing you going through,TRUE,FALSE
+56,57,NORTH,,FALSE,,,TRUE,FALSE
+57,58,NORTH,,FALSE,,,TRUE,FALSE
+57,59,WEST,,FALSE,,,TRUE,FALSE
+57,60,EAST,,FALSE,,,TRUE,FALSE
+58,61,NORTH,through a great wooden door,TRUE,TRUE,the door is locked,TRUE,FALSE
+61,62,NORTH,,TRUE,FALSE,large roots block the way,TRUE,FALSE
+59,70,WEST,through an archway,FALSE,,,TRUE,FALSE
+70,71,WEST,over some stepping stones,FALSE,,,TRUE,FALSE
+71,72,WEST,over some stepping stones,FALSE,,,TRUE,FALSE
+72,73,SOUTH,through a doorway,FALSE,,,TRUE,FALSE
+72,74,WEST,through a stone archway,FALSE,,,TRUE,FALSE
+74,75,UP,via some wooden steps,FALSE,,,TRUE,FALSE
+72,76,NORTH,,TRUE,TRUE,fallen timbers block your way,TRUE,FALSE
+76,77,EAST,through a crack in the wall,FALSE,,,TRUE,FALSE
+60,80,EAST,through an archway,FALSE,,,TRUE,FALSE
+80,81,EAST,,TRUE,FALSE,you can't get there from the bridge,TRUE,FALSE
+81,82,EAST,,TRUE,FALSE,you can't get there from the bridge,TRUE,FALSE
+81,83,NORTH,,TRUE,TRUE,you can't get there from the bridge,TRUE,FALSE
+81,84,SOUTH,,TRUE,TRUE,you can't get there from the bridge,TRUE,FALSE
+83,85,UP,,FALSE,,,TRUE,FALSE
+85,86,EAST,along a rope walkway,FALSE,,,TRUE,FALSE
+86,87,EAST,along a rope walkway,FALSE,,,TRUE,FALSE
+82,88,EAST,,FALSE,,,TRUE,FALSE
+88,89,EAST,,FALSE,,,TRUE,FALSE
+89,90,EAST,,FALSE,,,TRUE,FALSE
+90,91,DOWN,,TRUE,TRUE,the pool is full of water,TRUE,FALSE
+91,92,SOUTH,through a sluice gate,FALSE,,,TRUE,FALSE
+92,93,WEST,along a low and narrow tunnel,FALSE,,,TRUE,FALSE
+89,94,DOWN,through a grate in the floor,TRUE,TRUE,you can't move the grate,TRUE,FALSE
+500,1,UP,by climbing a twisted tree root,FALSE,,,FALSE,FALSE
+200,201,SOuth,along a boggy path,FALSE,,,TRUE,FALSE
+201,202,West,along a stony path,FALSE,,,TRUE,FALSE
+202,203,up,via a steep rocky scramble,FALSE,,,TRUE,FALSE
+203,204,west,,FALSE,,,TRUE,FALSE
+204,205,west,,FALSE,,,TRUE,FALSE
+205,206,south,,FALSE,,,TRUE,FALSE
+206,207,south,,FALSE,,,TRUE,FALSE
+207,208,east,,FALSE,,,TRUE,FALSE
+206,209,west,,FALSE,,,TRUE,FALSE
+209,210,west,,FALSE,,,TRUE,FALSE
+210,211,north,through a low door,FALSE,,,TRUE,FALSE
+210,212,west,through a low door,FALSE,,,TRUE,FALSE
+210,222,south,following the main street,FALSE,,,TRUE,FALSE
+222,214,south,following the main street,FALSE,,,TRUE,FALSE
+214,216,south,,FALSE,,,TRUE,FALSE
+216,217,up,via some stone steps,FALSE,,,TRUE,FALSE
+218,219,south,,FALSE,,,TRUE,FALSE
+217,218,south,,FALSE,,,TRUE,FALSE
+222,215,west,,FALSE,,,TRUE,FALSE
+222,213,east,through a low door,FALSE,,,TRUE,FALSE
+214,221,east,,FALSE,,,TRUE,FALSE
+214,220,west,,FALSE,,,TRUE,FALSE
+201,230,south,,FALSE,,,TRUE,FALSE
+230,231,west,,FALSE,,,TRUE,FALSE
+230,232,east,,FALSE,,,TRUE,FALSE
+232,233,east,,FALSE,,,TRUE,FALSE
+232,234,south,,FALSE,,,TRUE,FALSE
+201,235,east,,FALSE,,,TRUE,FALSE
+235,236,east,along a narrow path,FALSE,,,TRUE,FALSE
+236,237,down,via an old ladder,FALSE,,,TRUE,FALSE
+237,238,north,through a battered wooden door,FALSE,,,TRUE,FALSE
+237,239,east,,FALSE,,,TRUE,FALSE
+239,240,down,,FALSE,,,TRUE,FALSE
+240,241,south,,FALSE,,,TRUE,FALSE
+237,242,down,,FALSE,,,TRUE,FALSE
+242,243,south,through an iron gateway,TRUE,TRUE,the iron gateway is locked,TRUE,FALSE
+243,244,south,,FALSE,,,TRUE,FALSE
+244,245,west,,TRUE,FALSE,you cannot see how to get through,TRUE,FALSE
+245,246,south,,FALSE,,,TRUE,FALSE
+244,247,east,,TRUE,TRUE,you cannot see how to get through,TRUE,FALSE
+247,248,east,,FALSE,,,TRUE,FALSE
+248,249,north,through a great door,TRUE,TRUE,the door is closed shut,TRUE,FALSE
+244,250,south,,TRUE,TRUE,you cannot see how to get through,TRUE,FALSE
+250,251,west,,FALSE,,,TRUE,FALSE
+251,252,south,through a tunnel,TRUE,TRUE,a large boulder blocks the way,TRUE,FALSE
+250,253,east,,FALSE,,,TRUE,FALSE
+253,254,east,across a wide chasm,TRUE,TRUE,the chasm looks too wide to cross,TRUE,FALSE
+253,255,south,,FALSE,,,TRUE,FALSE
+255,256,east,through a strange door,TRUE,TRUE,a door blocks the way,TRUE,FALSE
+250,257,south,through a great stone door,TRUE,TRUE,the door is locked,TRUE,FALSE
+257,258,south,,TRUE,FALSE,a great stone slab blocks the way out,TRUE,FALSE
+300,301,EAST,along a dusty track,FALSE,FALSE,,TRUE,FALSE
+301,302,SOUTH,along a pebbly track,FALSE,FALSE,,TRUE,FALSE
+302,303,SOUTH,along the dusty bed,FALSE,FALSE,,TRUE,FALSE
+303,304,SOUTH,over some rocks,FALSE,FALSE,,TRUE,FALSE
+304,305,SOUTH,by climbing,FALSE,FALSE,,TRUE,FALSE
+305,306,WEST,through the cave entrance,FALSE,FALSE,,TRUE,FALSE
+305,307,EAST,,FALSE,FALSE,,TRUE,FALSE
+307,308,EAST,along a track,FALSE,FALSE,,TRUE,FALSE
+307,310,NORTH,,FALSE,FALSE,,TRUE,FALSE
+308,309,DOWN,along a secret tunnel,FALSE,FALSE,,TRUE,TRUE
+308,311,NORTH,,FALSE,FALSE,,TRUE,FALSE
+310,311,EAST,,FALSE,FALSE,,TRUE,FALSE
+311,312,EAST,,FALSE,FALSE,,TRUE,FALSE
+311,313,NORTH,,FALSE,FALSE,,TRUE,FALSE
+313,316,NORTH,through a curtain across the tent entrance,FALSE,FALSE,,TRUE,FALSE
+313,314,WEST,,FALSE,FALSE,,TRUE,FALSE
+313,315,EAST,,FALSE,FALSE,,TRUE,FALSE
+316,317,WEST,,FALSE,FALSE,,TRUE,FALSE
+301,318,NORTH,,FALSE,FALSE,,TRUE,FALSE
+318,319,EAST,,FALSE,FALSE,,TRUE,FALSE
+319,320,EAST,,FALSE,FALSE,,TRUE,FALSE
+320,321,EAST,,FALSE,FALSE,,TRUE,FALSE
+321,322,EAST,,FALSE,FALSE,,TRUE,FALSE
+321,323,NORTH,,FALSE,FALSE,,TRUE,FALSE
+323,324,WEST,,FALSE,FALSE,,TRUE,FALSE
+322,326,DOWN,through a small hole in the rock,FALSE,FALSE,,TRUE,TRUE
+326,327,EAST,via some worn stone steps,FALSE,FALSE,,TRUE,FALSE
+327,330,EAST,through an ornate archway,FALSE,FALSE,,TRUE,FALSE
+327,328,NORTH,,FALSE,FALSE,,TRUE,FALSE
+327,329,SOUTH,,FALSE,FALSE,,TRUE,FALSE
+330,334,EAST,through a great door of gold,TRUE,TRUE,the door is locked,TRUE,FALSE
+323,331,DOWN,through a small hole in the rock,FALSE,FALSE,,TRUE,TRUE
+331,332,EAST,,FALSE,FALSE,,TRUE,FALSE
+332,333,UP,via a wooden ladder,FALSE,FALSE,,TRUE,FALSE
+334,335,EAST,,FALSE,FALSE,,TRUE,FALSE
+335,336,NORTH,,FALSE,FALSE,,TRUE,FALSE
+336,337,NORTH,,FALSE,FALSE,,TRUE,FALSE
+338,339,EAST,,FALSE,FALSE,,TRUE,FALSE
+340,341,EAST,,FALSE,FALSE,,TRUE,FALSE
+342,343,EAST,,FALSE,FALSE,,TRUE,FALSE
+343,346,EAST,,FALSE,FALSE,,TRUE,FALSE
+341,345,EAST,,FALSE,FALSE,,TRUE,FALSE
+339,344,EAST,,FALSE,FALSE,,TRUE,FALSE
+336,347,EAST,,FALSE,FALSE,,TRUE,FALSE
+335,348,EAST,,FALSE,FALSE,,TRUE,FALSE
+335,349,SOUTH,,FALSE,FALSE,,TRUE,FALSE
+348,350,SOUTH,,FALSE,FALSE,,TRUE,FALSE
+349,351,WEST,,FALSE,FALSE,,TRUE,FALSE
+349,350,EAST,,FALSE,FALSE,,TRUE,FALSE
+349,352,SOUTH,,FALSE,FALSE,,TRUE,FALSE
+350,353,SOUTH,,FALSE,FALSE,,TRUE,FALSE
+353,354,SOUTH,,FALSE,FALSE,,TRUE,FALSE
+355,356,EAST,through a great door of sand stone,TRUE,TRUE,the great door is locked,TRUE,FALSE
+348,355,EAST,,FALSE,FALSE,,TRUE,FALSE

@@ -1,0 +1,15 @@
+RPGClass,Dexterity,Intelligence,Strength,Wisdom,Charisma,Constitution,Playable
+Thief,1,2,3,4,5,6,1
+Warrior,6,7,8,9,10,11,1
+Warlock,2,4,5,3,4,8,1
+Wizard,2,4,5,3,4,8,1
+Rogue,11,11,8,11,11,9,1
+Monster,0,0,0,0,0,0,0
+Bird,0,0,0,0,0,0,0
+Blacksmith,15,15,20,5,5,15,0
+Miner,15,9,20,5,5,15,0
+Vendor,20,20,9,20,20,9,0
+Carpenter,15,15,20,5,5,15,0
+Craftsman,15,15,20,5,5,15,0
+Goatherd,15,15,20,5,5,15,0
+Animal,0,0,0,0,0,0,0

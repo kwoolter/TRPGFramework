@@ -1,0 +1,445 @@
+<conversations>
+    <conversation id="Jack">
+        <npc_name>Jack</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Welcome to the adventure!</text>
+            <pre_requisites>
+                <stat>
+                    <name>Strength</name>
+                    <value>5</value>
+                </stat>
+            </pre_requisites>
+            <rewards>
+                <stat>
+                    <name>Item:some water:Location</name>
+                    <value>-999</value>
+                    <global>True</global>
+                    <description>Jack gives you some water</description>
+                </stat>
+                <stat>
+                    <name>XP</name>
+                    <value>5</value>
+                    <operator>increment</operator>
+                </stat>
+                <stat>
+                    <name>Gold</name>
+                    <value>100</value>
+                    <operator>increment</operator>
+                </stat>
+            </rewards>
+        </line>
+        <line id="2">
+            <text>Are you enjoying it so far?</text>
+        </line>
+        <line id="3">
+            <text>You need to be strong to open that old chest!</text>
+        </line>
+        <line id="4">
+            <text>I love maps and adventures. Do you?</text>
+            <rewards>
+                <stat>
+                    <name>TalkJack</name>
+                    <value>1</value>
+                    <description>Jack gives you a new quest!</description>
+                </stat>
+            </rewards>
+        </line>
+        <line id="5">
+            <text>There are some interesting places around here!</text>
+        </line>
+    </conversation>
+    <conversation id="Rosie">
+        <npc_name>Rosie</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Good day to you!</text>
+        </line>
+        <line id="2">
+            <text>I like bright and colourful things!</text>
+        </line>
+        <line id="3">
+            <text>Maybe you could find something for me as a present!  I like presents</text>
+        </line>
+    </conversation>
+	<conversation id="Snuggly">
+        <npc_name>Snuggly</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Aaaark!</text>
+        </line>
+		<line id="2">
+            <text>Aaaark aaaark!</text>
+        </line>
+		<line id="3">
+            <text>Take hard! Take smooth!</text>
+			<rewards>
+                <stat>
+                    <name>Item:a stone key:Location</name>
+                    <value>110</value>
+                    <global>True</global>
+					<description>Snuggly drops an item</description>
+                </stat>
+                <stat>
+                    <name>XP</name>
+                    <value>5</value>
+                    <operator>increment</operator>
+                </stat>
+            </rewards>
+        </line>
+    </conversation>
+	<conversation id="Smaug">
+        <npc_name>Smaug</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>I smell something!</text>
+        </line>
+		<line id="2">
+            <text>Is it Dwarf! No, then what?</text>
+        </line>
+		<line id="3">
+            <text>It thinks I don't know it is here, ha ha ha!</text>
+        </line>
+    </conversation>
+    <conversation id="Grungar">
+        <npc_name>Grungar</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>What are you looking at?</text>
+        </line>
+        <line id="2">
+            <text>I eat people like you!</text>
+        </line>
+        <line id="3">
+            <text>You still here?</text>
+        </line>
+        <line id="4">
+            <text>Go on then - on your way!</text>
+            <rewards>
+                <stat>
+                    <name>9:8:EAST</name>
+                    <value>1</value>
+                    <description>Grungar opens the gate</description>
+                </stat>
+                <stat>
+                    <name>8:9:WEST</name>
+                    <value>1</value>
+                    <description>Grungar opens the gate</description>
+                </stat>
+                <stat>
+                    <name>XP</name>
+                    <value>5</value>
+                    <operator>increment</operator>
+                </stat>
+            </rewards>
+        </line>
+    </conversation>
+    <conversation id="Oliver">
+        <npc_name>Oliver</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Welcome to the tree top home of the wood elves!</text>
+        </line>
+        <line id="2">
+            <text>It is easy for strangers to get lost here.</text>
+        </line>
+        <line id="3">
+            <text>I buy and sell stuff if you are interested in seeing my shop?</text>
+        </line>
+    </conversation>
+    <conversation id="Monty">
+        <npc_name>Monty</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Busy, busy, busy!</text>
+        </line>
+        <line id="2">
+            <text>Always on the go!</text>
+        </line>
+        <line id="3">
+            <text>I can train you if you have the necessary skills.</text>
+        </line>
+    </conversation>
+    <conversation id="Horvath">
+        <npc_name>Horvath</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>I have travelled all of these lands.</text>
+        </line>
+        <line id="2">
+            <text>Many years I have travelled.</text>
+        </line>
+        <line id="3">
+            <text>Now my travelling is over and I must rest.</text>
+        </line>
+        <line id="4">
+            <text>If only I had found the three legendary Runic tablets of Azgar.  Maybe you can help?</text>
+            <rewards>
+                <stat>
+                    <name>TalkHorvath</name>
+                    <value>1</value>
+                    <description>Horvath needs your help - can you find the mysterious tablets?</description>
+                </stat>
+            </rewards>
+        </line>
+        <line id="5">
+            <text>Many, many years...umm...</text>
+        </line>
+    </conversation>
+    <conversation id="Fargast">
+        <npc_name>Fargast</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Well, well.  Who have we here?</text>
+        </line>
+        <line id="2">
+            <text>Don't get many folks in these parts any more.</text>
+        </line>
+        <line id="3">
+            <text>Maybe you will be after some supplies?</text>
+        </line>
+    </conversation>
+    <conversation id="Torvine">
+        <npc_name>Torvine</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>....so thirsty...</text>
+        </line>
+        <line id="2">
+            <text>...Lake is poisoned...</text>
+        </line>
+        <line id="3">
+            <text>...please help me....</text>
+        </line>
+        <line id="4">
+            <text>...waterurrghhhh...</text>
+        </line>
+    </conversation>
+    <conversation id="King Weed">
+        <npc_name>King Weed</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>What are you doing in my throne room!</text>
+            <rewards>
+                <stat>
+                    <name>Damage</name>
+                    <value>2</value>
+                    <random>2</random>
+                    <operator>increment</operator>
+                </stat>
+            </rewards>
+        </line>
+        <line id="2">
+            <text>How dare you think that you could defeat me!</text>
+            <rewards>
+                <stat>
+                    <name>Damage</name>
+                    <value>2</value>
+                    <random>2</random>
+                    <operator>increment</operator>
+                </stat>
+            </rewards>
+        </line>
+        <line id="3">
+            <text>You will not see the light of day again!</text>
+            <rewards>
+                <stat>
+                    <name>Damage</name>
+                    <value>2</value>
+                    <random>2</random>
+                    <operator>increment</operator>
+                </stat>
+            </rewards>
+        </line>
+        <line id="4">
+            <text>Gurrrrgle, gurrrgle....Burrrppppp!</text>
+            <rewards>
+                <stat>
+                    <name>Item:a pendant:Location</name>
+                    <value>62</value>
+                    <global>True</global>
+					<description>an object falls from King Weed's slimy mouth</description>
+                </stat>
+            </rewards>
+        </line>
+    </conversation>
+    <conversation id="Dwalin">
+        <npc_name>Dwalin</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>A stranger in town...?</text>
+        </line>
+        <line id="2">
+            <text>You be one of those adventurers?</text>
+        </line>
+        <line id="3">
+            <text>Well, you have come to the right place if you want some good kit to help you on your journey!</text>
+        </line>
+        <line id="4">
+            <text>Only thing is, I'm right out of ore!  Maybe you could fetch some?</text>
+        </line>
+    </conversation>
+    <conversation id="Baylock">
+        <npc_name>Baylock</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Welcome customer to my workshop!</text>
+        </line>
+        <line id="2">
+            <text>The best carpenter in this land I be!</text>
+        </line>
+        <line id="3">
+            <text>They call me the magician of wood!</text>
+        </line>
+        <line id="4">
+            <text>Don't believe me?  Fetch me some wood and see for yourself.</text>
+            <pre_requisites>
+                <stat>
+                   <name>Find some materials</name>
+                    <value>1</value>
+                    <comparator>neq</comparator>
+                </stat>
+            </pre_requisites>
+        </line>
+    </conversation>
+    <conversation id="Barfur">
+        <npc_name>Barfur</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>I am Barfur the Great, son of Furbar!</text>
+        </line>
+        <line id="2">
+            <text>I rule over all that you see in this valley!</text>
+        </line>
+        <line id="3">
+            <text>Show respect to me and my people!</text>
+            <pre_requisites>
+                <stat>
+                   <name>A tribute for the King</name>
+                    <value>1</value>
+                    <comparator>neq</comparator>
+                </stat>
+            </pre_requisites>
+        </line>
+        <line id="4">
+            <text>I do like a bit of fresh fish!</text>
+            <pre_requisites>
+                <stat>
+                   <name>A tribute for the King</name>
+                    <value>1</value>
+                    <comparator>neq</comparator>
+                </stat>
+            </pre_requisites>
+        </line>
+    </conversation>
+        <conversation id="Okkho">
+        <npc_name>Okkho</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Hmmmmmm</text>
+        </line>
+        <line id="2">
+            <text>Hmmmmphhhh</text>
+        </line>
+    </conversation>
+    <conversation id="Ffalin">
+        <npc_name>Ffalin</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>What the blazes are you doin' down 'ere!</text>
+        </line>
+        <line id="2">
+            <text>There ain't no gold left in this mine, go away!</text>
+        </line>
+        <line id="3">
+            <text>...and while you are at it, keep your hand off my stuff!</text>
+        </line>
+        <line id="3">
+            <text>...and don't go snoopin' around either!</text>
+        </line>
+    </conversation>
+    <conversation id="Gregyr">
+        <npc_name>Gregyr</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Come in from the cold in dear customer...</text>
+        </line>
+        <line id="2">
+            <text>Take some time to looks at my wares!</text>
+        </line>
+        <line id="3">
+            <text>All prices are reasonable you will find.</text>
+        </line>
+        <line id="3">
+            <text>Now don't just stand there, take a look!</text>
+        </line>
+    </conversation>
+    <conversation id="King Rock">
+        <npc_name>King Rock</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Well, well, well...an uninvited guest!</text>
+        </line>
+        <line id="2">
+            <text>You came for something?  Well, you shan't have it!</text>
+        </line>
+        <line id="3">
+            <text>What you seek is mine!</text>
+        </line>
+        <line id="4">
+            <text>Go away before I eat you alive!</text>
+        </line>
+    </conversation>
+    <conversation id="Yousafa">
+        <npc_name>Yousafa</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>Hello traveller, I am Yousafa.</text>
+        </line>
+        <line id="2">
+            <text>The desert to the East can get very hot...enough to drive you mad they say!</text>
+        </line>
+        <line id="3">
+            <text>I am a goatherd, yes. But as you can see I have no goats.  I have offended the gods in someway.</text>
+        </line>
+        <line id="4">
+            <text>The gods are angry with Yousafa.  How can I appease them?</text>
+        </line>
+        <line id="5">
+            <text>Here, take this.  Maybe a sacrifice to the gods can bring back my good luck...and my goats!</text>
+            <rewards>
+                <stat>
+                    <name>Item:a bedouin knife:Location</name>
+                    <value>-999</value>
+                    <global>True</global>
+                    <description>Yousafa gives you a small knife</description>
+                </stat>
+                <stat>
+                    <name>YousafaTalk</name>
+                    <value>1</value>
+                    <description>***</description>
+                </stat>
+            </rewards>
+        </line>
+    </conversation>
+    <conversation id="Mustafa">
+        <npc_name>Mustafa</npc_name>
+        <linear>True</linear>
+        <line id="1">
+            <text>I am the leader of the Bedou!</text>
+        </line>
+        <line id="2">
+            <text>I am the ruler of the desert and all its treasures!</text>
+        </line>
+        <line id="3">
+            <text>Bring me something fit for a king!</text>
+            <pre_requisites>
+                <stat>
+                   <name>A tribute for the Bedouin leader</name>
+                    <value>1</value>
+                    <comparator>neq</comparator>
+                </stat>
+            </pre_requisites>
+        </line>
+    </conversation>
+</conversations>

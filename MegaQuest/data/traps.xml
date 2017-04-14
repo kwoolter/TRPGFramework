@@ -1,0 +1,1110 @@
+<traps>
+    <trap id="Pit">
+        <name>Pit of Spikes</name>
+        <one_shot>True</one_shot>
+        <description>You tread on some earth that gives way under your feet revealing a concealed pit that has deadly spikes at the bottom...</description>
+        <completion_msg>...and you fall into the pit injuring yourself.</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Dexterity</name>
+                <value>10</value>
+                <comparator>lte</comparator>
+                <failure_msg>...but you jump to safety.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>500</value>
+                <description>you find yourself at the bottom of the pit</description>
+            </stat>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Damage</name>
+                <value>10</value>
+                <random>3</random>
+                <operator>increment</operator>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Angry Bear">
+        <name>Angry Bear</name>
+        <one_shot>False</one_shot>
+        <description>You walk into a dark alcove......and wake up an angry bear...</description>
+        <completion_msg>...the bear takes a swipe at you...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>12</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>11</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Item:a wooden flute:Location</name>
+                <value>-999</value>
+                <comparator>neq</comparator>
+                <global>True</global>
+                <failure_msg>...quickly you play some notes on the wooden flute.  The bear is soothed and goes back to sleep.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Damage</name>
+                <value>5</value>
+                <random>3</random>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>10</value>
+                <description>...the bear chases you out of its cave</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Long Fall">
+        <name>Dodgy Walkway</name>
+        <one_shot>False</one_shot>
+        <description>You put your foot on a rotten piece of wood in the walkway.  The wood snaps...</description>
+        <completion_msg>...and you fall helplessly off the walkway.</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>103</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Dexterity</name>
+                <value>9</value>
+                <comparator>lte</comparator>
+                <failure_msg>...but you jump to safety.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Damage</name>
+                <value>10</value>
+                <random>3</random>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>1</value>
+                <description>with a heavy crash you land on the forest floor below</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Vine Climb">
+        <name>Vine Climb</name>
+        <one_shot>False</one_shot>
+        <description>You start to climb up the twisted vines...</description>
+        <completion_msg>...but the vines that you are climbing snap and break under your weight</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>55</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>54</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Total Weight</name>
+                <value>15</value>
+                <comparator>gte</comparator>
+                <failure_msg>...and climb your way to the top.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Damage</name>
+                <value>10</value>
+                <random>3</random>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>54</value>
+                <description>You fall back down to the floor below with a thud!</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Flame Trap">
+        <name>Flame Trap</name>
+        <one_shot>False</one_shot>
+        <description>You put your foot on stone that triggers a blast of flame to erupt from a hole in the stone wall...</description>
+        <completion_msg>...you are badly burnt</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>26</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>25</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Dexterity</name>
+                <value>7</value>
+                <comparator>lte</comparator>
+                <failure_msg>...but you quickly dive and roll under the flames to safety.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Damage</name>
+                <value>10</value>
+                <random>3</random>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>25</value>
+                <description>the flames drive you back</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Long Jump EAST">
+        <name>Long Ledge Jump East</name>
+        <one_shot>False</one_shot>
+        <description>You attempt to jump across the large gap between ledges...</description>
+        <completion_msg>...you jump through the air but you don't make it to the other side and fall headlong down the mountainside.</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>42</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>41</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Dexterity</name>
+                <value>5</value>
+                <comparator>lte</comparator>
+                <failure_msg>...you do an almighty jump and just about reach the other side safely.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Damage</name>
+                <value>100</value>
+                <random>30</random>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>9</value>
+                <description>***</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Long Jump WEST">
+        <name>Long Ledge Jump West</name>
+        <one_shot>False</one_shot>
+        <description>You attempt to jump across the large gap between ledges...</description>
+        <completion_msg>...you jump through the air but you don't make it to the other side and fall headlong down the mountainside.</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>41</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>42</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Dexterity</name>
+                <value>5</value>
+                <comparator>lte</comparator>
+                <failure_msg>...you do an almighty jump and just about reach the other side safely.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Damage</name>
+                <value>100</value>
+                <random>30</random>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>9</value>
+                <description>***</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Forest Boss Ready">
+        <name>Forest Boss Ready</name>
+        <one_shot>False</one_shot>
+        <description>...you think to yourself 'Am I ready for this?'...</description>
+        <completion_msg>...you say aloud 'I AM READY!'...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>61</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>58</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Fan the flames</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Item:a flint:Location</name>
+                <value>-999</value>
+                <comparator>eq</comparator>
+                <global>True</global>
+                <failure_msg>...you think to yourself 'Maybe I should come back later?'</failure_msg>
+            </stat>
+            <stat>
+                <name>Item:a fan:Location</name>
+                <value>-999</value>
+                <comparator>eq</comparator>
+                <global>True</global>
+                <failure_msg>...you think to yourself 'Maybe I should take another look around before I go in here.'</failure_msg>
+            </stat>
+            <stat>
+                <name>Item:a flask of oil:Location</name>
+                <value>-999</value>
+                <comparator>eq</comparator>
+                <global>True</global>
+                <failure_msg>...you think to yourself 'Maybe there is something that I have forgotten to bring with me?'</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>Forest Boss Equipment</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+        </rewards>
+   </trap>
+   <trap id="Forest Boss Turn Back">
+        <name>Forest Boss Turn Back</name>
+        <one_shot>False</one_shot>
+        <description>...you tip toe along the tunnel...</description>
+        <completion_msg>...but you decide to turn back...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>62</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>61</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Forest Boss Equipment</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>58</value>
+                <description>...and head back to the sunny courtyard.</description>
+            </stat>
+        </rewards>
+   </trap>
+   <trap id="Forest Boss Trap Door">
+        <name>Forest Boss Trap Door</name>
+        <one_shot>True</one_shot>
+        <description>You enter the large chamber......</description>
+        <completion_msg>...twisting roots appear from the walls, floor and ceiling...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>62</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>61</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Forest Boss Equipment</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+            <stat>
+                <name>61:62:NORTH</name>
+                <value>0</value>
+                <description>... your way out is now blocked by the large, twisting roots</description>
+            </stat>
+            <stat>
+                <name>62:61:SOUTH</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+        </rewards>
+   </trap>
+   <trap id="Forest Boss Poison Trap">
+        <name>Forest Boss Poison Trap</name>
+        <one_shot>False</one_shot>
+        <description>You step in some slime....</description>
+        <completion_msg>...the poisonous slime inflicts damage...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>62</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>62</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Fan the flames</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Dexterity</name>
+                <value>9</value>
+                <comparator>lte</comparator>
+                <failure_msg>...but you quickly jump out before any damage is inflicted.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>Damage</name>
+                <value>2</value>
+                <random>2</random>
+            </stat>
+        </rewards>
+   </trap>
+   <trap id="Spider Trap West">
+        <name>Spider Trap West</name>
+        <one_shot>False</one_shot>
+        <description>You make your way across the slimy stone stepping stones but a giant spider drops down from the overhanging tree branches...</description>
+        <completion_msg>...the spider bites you</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>72</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>71</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Item:a torch:Location</name>
+                <value>-999</value>
+                <comparator>neq</comparator>
+                <global>True</global>
+                <failure_msg>...you brandish the torch at the spider and it retreats from the flames in fear.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Damage</name>
+                <value>10</value>
+                <random>3</random>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>71</value>
+                <description>you can't get past the nasty giant spider and retreat</description>
+            </stat>
+        </rewards>
+   </trap>
+   <trap id="Swing Bridge to North South">
+        <name>Swing Bridge to North South</name>
+        <one_shot>False</one_shot>
+        <description>You start to walk across the bridge...</description>
+        <completion_msg>...as you approach the middle the bridge rotates.</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>81</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>80</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+            <stat>
+                <name>81:80:WEST</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>80:81:EAST</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:82:EAST</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>82:81:WEST</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:83:NORTH</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>83:81:SOUTH</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:84:SOUTH</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>84:81:NORTH</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+        </rewards>
+   </trap>
+   <trap id="Swing Bridge to East West">
+        <name>Swing Bridge to East West</name>
+        <one_shot>False</one_shot>
+        <description>You start to walk across the bridge...</description>
+        <completion_msg>...as you approach the middle the bridge rotates.</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>81</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>84</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+            <stat>
+                <name>81:80:WEST</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:82:EAST</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:82:EAST</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>82:81:WEST</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:83:NORTH</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>83:81:SOUTH</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:84:SOUTH</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>84:81:NORTH</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+        </rewards>
+   </trap>
+    <trap id="Bog Trap">
+        <name>Bog Trap</name>
+        <one_shot>False</one_shot>
+        <description>You start the walk out across the bog but you start sinking...</description>
+        <completion_msg>...the bog sucks you in deeper...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>232</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>230</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Item:a plank:Location</name>
+                <value>-999</value>
+                <comparator>neq</comparator>
+                <global>True</global>
+                <failure_msg>...quickly you lay out the wooden plank across the bog and use it as a bridge to get to the other side</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>230</value>
+                <description>...you manage to scramble back to where you started</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Spinning Blade Trap">
+        <name>Spinning Blade Trap</name>
+        <one_shot>False</one_shot>
+        <description>You put your foot on stone that triggers a spinning blade to whir towards you...</description>
+        <completion_msg>...you are cut by the spinning blade.</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>248</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>247</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Dexterity</name>
+                <value>15</value>
+                <comparator>lte</comparator>
+                <failure_msg>...but you quickly jump over the blade to safety.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Damage</name>
+                <value>10</value>
+                <random>3</random>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>247</value>
+                <description>the spinning blade drives you back</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Mountain Boss Ready">
+        <name>Mountain Boss Ready</name>
+        <one_shot>False</one_shot>
+        <description>...you think to yourself 'Am I ready for this?'...</description>
+        <completion_msg>...you say aloud 'I AM READY!'...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>257</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>250</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Weaken the Troll</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Item:some acid:Location</name>
+                <value>-999</value>
+                <comparator>eq</comparator>
+                <global>True</global>
+                <failure_msg>...you think to yourself 'Maybe I should come back later?'</failure_msg>
+            </stat>
+            <stat>
+                <name>Item:some ball bearings:Location</name>
+                <value>-999</value>
+                <comparator>eq</comparator>
+                <global>True</global>
+                <failure_msg>...you think to yourself 'Maybe I should take another look around before I go in here.'</failure_msg>
+            </stat>
+            <stat>
+                <name>Item:a small whistle:Location</name>
+                <value>-999</value>
+                <comparator>eq</comparator>
+                <global>True</global>
+                <failure_msg>...you think to yourself 'Maybe there is something that I have forgotten to bring with me?'</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>Mountain Boss Equipment</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+        </rewards>
+   </trap>
+   <trap id="Mountain Boss Trap Door">
+        <name>Mountain Boss Trap Door</name>
+        <one_shot>True</one_shot>
+        <description>You enter the large chamber......</description>
+        <completion_msg>...a slab of rock slams down behind you...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>258</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>257</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Mountain Boss Equipment</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+            <stat>
+                <name>258:257:NORTH</name>
+                <value>0</value>
+                <description>... your way out is now blocked by a large slab of rock!</description>
+            </stat>
+        </rewards>
+   </trap>
+   <trap id="Mountain Boss Turn Back">
+        <name>Mountain Boss Turn Back</name>
+        <one_shot>False</one_shot>
+        <description>...you tip toe along the tunnel...</description>
+        <completion_msg>...but you decide to turn back...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>258</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>257</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Mountain Boss Equipment</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>250</value>
+                <description>...and head back to the grand chamber.</description>
+            </stat>
+        </rewards>
+   </trap>
+    <trap id="Desert Trap">
+        <name>Desert Trap</name>
+        <one_shot>False</one_shot>
+        <description>You set out across the desert...</description>
+        <completion_msg>...the heat is intense and your thirst drives you mad...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>319</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>318</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Item:a full waterskin:Location</name>
+                <value>-999</value>
+                <comparator>neq</comparator>
+                <global>True</global>
+                <failure_msg>...the heat makes you thirsty but your water supplies keep you going across the scorching sands.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>XP</name>
+                <value>-5</value>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Damage</name>
+                <value>5</value>
+                <random>3</random>
+                <operator>increment</operator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>318</value>
+                <description>you find that you have wandered back to where you started!</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Guardians of the royal tomb 1">
+        <name>Guardians of the royal tomb 1</name>
+        <one_shot>False</one_shot>
+        <description>You walk towards the royal tomb...</description>
+        <completion_msg>..."Only royalty are allowed into the tomb of the king!"</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>330</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>327</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Item:a bejewelled pendant:Location</name>
+                <value>-999</value>
+                <global>True</global>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Charisma</name>
+                <value>25</value>
+                <comparator>lte</comparator>
+                <failure_msg>...your powerful charisma convinces the guardians that you are indeed royalty and they let you pass.</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>327</value>
+                <description>...the guardians of the tomb block your way</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Guardians of the royal tomb 2">
+        <name>Guardians of the royal tomb 2</name>
+        <one_shot>False</one_shot>
+        <description>You walk towards the royal tomb...</description>
+        <completion_msg>..."Only royalty are allowed into the tomb of the king!"</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>330</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>327</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Item:a bejewelled pendant:Location</name>
+                <value>-999</value>
+                <global>True</global>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+            <stat>
+                <name>Item:a bejewelled pendant:Location</name>
+                <value>-999</value>
+                <global>True</global>
+                <comparator>neq</comparator>
+                <failure_msg>The royal pendant convinces the guardians that you are of royal birth</failure_msg>
+            </stat>
+        </checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>327</value>
+                <description>...the guardians of the tomb block your way</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Pyramid up elevator G">
+        <name>Pyramid up elevator G</name>
+        <one_shot>False</one_shot>
+        <description>You step onto the elevator...</description>
+        <completion_msg>...the elevator rises...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>337</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>336</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>338</value>
+                <description>...and stops at the 1st floor.</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Pyramid up elevator 1">
+        <name>Pyramid up elevator 1</name>
+        <one_shot>False</one_shot>
+        <description>You step onto the elevator...</description>
+        <completion_msg>...the elevator rises...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>338</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>339</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>340</value>
+                <description>...and stops at the 2nd floor.</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Pyramid up elevator 2">
+        <name>Pyramid up elevator 2</name>
+        <one_shot>False</one_shot>
+        <description>You step onto the elevator...</description>
+        <completion_msg>...the elevator rises...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>340</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>341</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>342</value>
+                <description>...and stops at the 3rd floor.</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Pyramid down elevator 1">
+        <name>Pyramid down elevator 1</name>
+        <one_shot>False</one_shot>
+        <description>You step onto the elevator...</description>
+        <completion_msg>...the elevator descends...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>344</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>339</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>347</value>
+                <description>...and stops at the ground floor.</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Pyramid down elevator 2">
+        <name>Pyramid down elevator 2</name>
+        <one_shot>False</one_shot>
+        <description>You step onto the elevator...</description>
+        <completion_msg>...the elevator descends...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>345</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>341</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>344</value>
+                <description>...and stops at the 1st floor.</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Pyramid down elevator 3">
+        <name>Pyramid down elevator 3</name>
+        <one_shot>False</one_shot>
+        <description>You step onto the elevator...</description>
+        <completion_msg>...the elevator descends...</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>346</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>343</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards>
+            <stat>
+                <name>Location</name>
+                <value>345</value>
+                <description>...and stops at the 2nd floor.</description>
+            </stat>
+        </rewards>
+    </trap>
+</traps>

@@ -1,0 +1,3324 @@
+<quests>
+    <quest id="Explore undergrowth">
+        <name>Explore the undergrowth</name>
+        <description>investigate the plants and bushes to see if you can find anything</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Find the box">
+                <name>Investigate the undergrowth</name>
+                <description>take a closer look at the plants, bushes and brambles</description>
+                <completion_msg>With the large knife you hack back the thorny bushes and spiky brambles...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>20</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a large knife:Location</name>
+                        <global>True</global>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>The plants are spiky and bushes are thorny!  You can't really get very close.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:an ornate wooden box:Location</name>
+                        <value>20</value>
+                        <global>True</global>
+                        <description>...amongst the bushes you find a wooden box!</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Open the box">
+                <name>Open the wooden box that you found</name>
+                <description>you are curious.  What is inside this ornate box that you found? Open it!</description>
+                <completion_msg>Carefully you open the wooden box...</completion_msg>
+                <pre_requisites>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:an ornate wooden box:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the wooden box!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Gold</name>
+                        <value>100</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a square stone tablet:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <description>inside the box you find a stone tablet.  You take it, but what is it for?</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open chest">
+        <name>Open the treasure chest</name>
+        <description>start your adventure with some goodies</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Open Chest">
+                <name>Open the treasure chest</name>
+                <description>Work out how to open the old chest and see what is inside</description>
+                <completion_msg>Using your strength you broke open the old chest.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Strength</name>
+                        <value>10</value>
+                    </stat>
+                    <stat>
+                        <name>Location</name>
+                        <value>1</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Strength</name>
+                        <value>15</value>
+                        <random>3</random>
+                        <failure_msg>You need to be really strong to open this chest!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Gold</name>
+                        <value>100</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a potion bottle:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <description>a small bottle</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Use the four gem stones">
+        <name>Investigate the stone panel</name>
+        <description>Work out what goes into the four coloured slots - black, orange, red and green</description>
+        <completion_msg>You have filled all of the coloured slots with gem stones!</completion_msg>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="jet stone">
+                <name>Put something in the black coloured slot</name>
+                <description>Work out what goes in the black slot</description>
+                <completion_msg>You try placing the jet gemstone into the black coloured slot...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>54</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a jet gemstone:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that goes into the black slot</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a jet gemstone:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the jet gemstone fits!</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Gemstone Count</name>
+                        <value>1</value>
+                        <operator>increment</operator>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="amber stone">
+                <name>Put something in the orange coloured slot</name>
+                <description>Work out what goes in the orange slot</description>
+                <completion_msg>You try placing the amber gemstone into the orange coloured slot...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>54</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:an amber gemstone:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that goes into the orange slot</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:an amber gemstone:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the amber gemstone fits!</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Gemstone Count</name>
+                        <value>1</value>
+                        <operator>increment</operator>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="ruby stone">
+                <name>Put something in the red coloured slot</name>
+                <description>Work out what goes in the red slot</description>
+                <completion_msg>You try placing the ruby gemstone into the red coloured slot...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>54</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a ruby gemstone:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that goes into the red slot</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a ruby gemstone:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the ruby gemstone fits!</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Gemstone Count</name>
+                        <value>1</value>
+                        <operator>increment</operator>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="emerald stone">
+                <name>Put something in the green coloured slot</name>
+                <description>Work out what goes in the green slot</description>
+                <completion_msg>You try placing the emerald gemstone into the green coloured slot...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>54</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:an emerald gemstone:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that goes into the green slot</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:an emerald gemstone:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the emerald gemstone fits!</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Gemstone Count</name>
+                        <value>1</value>
+                        <operator>increment</operator>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open the Gate">
+        <name>Unlock the gate</name>
+        <description>open the lock on the gate</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Pick the lock">
+                <name>Pick the lock</name>
+                <description>Work out how to open the lock on the gate</description>
+                <completion_msg>Using the lock pick you unlock the gate.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Intelligence</name>
+                        <value>5</value>
+                    </stat>
+                    <stat>
+                        <name>Location</name>
+                        <value>52</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a lock pick:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have a key or any tools to open the locked gate</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Dexterity</name>
+                        <value>5</value>
+                        <random>3</random>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a lock pick:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the Lock Pick breaks!</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>52:53:NORTH</name>
+                        <value>1</value>
+                        <description>The gate is open now</description>
+                    </stat>
+                    <stat>
+                        <name>53:52:SOUTH</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open the Forest Temple Boss Door">
+        <name>Unlock the great door in the Forest Temple</name>
+        <description>find a key to open the great door</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Boss Key">
+                <name>Unlock the great door</name>
+                <description>Find a key to open the great door</description>
+                <completion_msg>You used the great forest key to open the door</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>58</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:the great forest key:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the great forest key to open the door</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:the great forest key:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the key slides into the locking mechanism!</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>58:61:NORTH</name>
+                        <value>1</value>
+                        <description>The great door is open</description>
+                    </stat>
+                    <stat>
+                        <name>61:58:SOUTH</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="The Store House">
+        <name>Investigate the store house</name>
+        <description>take a closer look at the store house</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="brush the floor">
+                <name>Search the store house</name>
+                <description>take a look around the dusty, old store house</description>
+                <completion_msg>As you search you decide to brush the dusty floor with the wooden broom to get a better look...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>28</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a broom:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You take a look around.  It is really dirty and so dusty in here!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a large flag stone covered in an ancient writing:Location</name>
+                        <value>28</value>
+                        <global>True</global>
+                        <description>As you brush the dusty floor you notice something interesting...</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="REad flag stone">
+                <name>Read the flagstone</name>
+                <description>work out what the old writing says</description>
+                <completion_msg>You use the old book to translate the writing on the flag stone...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>28</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Intelligence</name>
+                        <value>11</value>
+                        <failure_msg>You study the writings on the flag stone but you cannot understand them.</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Item:an old book:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You read the inscriptions but you need a way to translate them.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:the portal spell:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <description>...you learnt the portal spell!</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Cartographer">
+        <name>Cartographers Challenge</name>
+        <description>Jack the Dwarf wants you to visit some interesting places and record them on a map for him</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Ring of stones">
+                <name>Visit the ring of stones</name>
+                <description>Find the ring of stones and mark it on your map</description>
+                <completion_msg>You found the ring of stones and marked it on the map</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>TalkJack</name>
+                        <value>1</value>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>8</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>This is not the ring of stones!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Old Statue">
+                <name>Visit the old statue</name>
+                <description>Find the old statue and mark it on your map</description>
+                <completion_msg>You found the old statue and marked it on the map</completion_msg>
+                <pre_requisites>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>4</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>This is not the old statue!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Store house">
+                <name>Visit the old store house</name>
+                <description>Find the old store house and mark it on your map</description>
+                <completion_msg>You found the old store house and marked it on the map</completion_msg>
+                <pre_requisites>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>28</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>This is not the old store house!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+                <rewards>
+                    <stat>
+                        <name>Gold</name>
+                        <value>25</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+           <challenge id="Return">
+                <name>Return the map</name>
+                <description>Now go back to Jack the Dwarf and hand him the completed map</description>
+                <completion_msg>You completed the map and returned it to Jack the Dwarf; he is pleased!</completion_msg>
+                <pre_requisites>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>2</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>Jack is not here.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+                <rewards>
+                    <stat>
+                        <name>Gold</name>
+                        <value>25</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Turn off the flames">
+        <name>Disable the flame trap</name>
+        <description>work out how to disable the flame trap</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="place the stone block">
+                <name>place something in the empty slot in the coffin lid</name>
+                <description>find something that will fit the empty slot and put it in</description>
+                <completion_msg>You place the stone block in the empty slot in the coffin.  As it slides into place you hear a mechanism turn behind the walls.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>25</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a block of stone:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that looks like it will fit into the empty slot</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Flame Trap</name>
+                        <value>1</value>
+                        <description>The flame trap is switched off</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a block of stone:Location</name>
+                        <value>0</value>
+                        <operator>eq</operator>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open the culvert">
+        <name>Open the culvert</name>
+        <description>work out how to open the iron culvert</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="open the culvert">
+                <name>Open the culvert</name>
+                <description>Work out how to open the iron culvert that blocks your way</description>
+                <completion_msg>You use the metal bar to try and prize open the culvert.  With a few strong pulls it loosens and opens!</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>33</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a metal bar:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have a key or any tools that would open the culvert</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Strength</name>
+                        <value>15</value>
+                        <random>3</random>
+                        <failure_msg>You try using the metal bar to open the culvert but you are not strong enough to budge it.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>33:34:EAST</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>34:33:WEST</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Rosie present">
+        <name>A present for Rosie</name>
+        <description>find a present for Rosie; something that she will really like.</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Give Present">
+                <name>Give Rosie a present</name>
+                <description>find a suitable present and give it to Rosie</description>
+                <completion_msg>You found a present that Rosie really likes</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>3</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a feather:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that she likes</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Gold</name>
+                        <value>100</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a feather:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>Rosie takes the beautiful feather from you</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Snuggly Flight Up">
+        <name>Fly up with Snuggly</name>
+        <description>take a ride with Snuggly to a far off place</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Fly">
+                <name>Fly up with Snuggly</name>
+                <description>Let Sunggly take you on a ride</description>
+                <completion_msg>You flew with Snuggly</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>110</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                   <stat>
+                        <name>Character:Snuggly:Location</name>
+                        <value>110</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>Snuggly the crow is not here!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Location</name>
+                        <value>40</value>
+                        <description>Snuggly takes you to the top of a far away mountain</description>
+                    </stat>
+                    <stat>
+                        <name>Character:Snuggly:Location</name>
+                        <value>40</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>Character:Snuggly:RoutePosition</name>
+                        <value>3</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Snuggly Flight Down">
+        <name>Fly back down with Snuggly</name>
+        <description>take a ride with Snuggly back to the forest</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Fly">
+                <name>Fly down with Snuggly</name>
+                <description>Let Sunggly take you on a ride back to the forest</description>
+                <completion_msg>You flew with Snuggly</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>40</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                   <stat>
+                        <name>Character:Snuggly:Location</name>
+                        <value>40</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>Snuggly the crow is not here!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Location</name>
+                        <value>110</value>
+                        <description>Sunggly takes you back down to the big tree in the forest</description>
+                    </stat>
+                    <stat>
+                        <name>Character:Snuggly:Location</name>
+                        <value>110</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>Character:Snuggly:RoutePosition</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="The Dark Cave">
+        <name>Open the stone door</name>
+        <description>find a way to open the stone door that blocks the way at the back of the dark cave</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Light the stone">
+                <name>Open the stone door</name>
+                <description>work out how to open the stone door</description>
+                <completion_msg>The torchlight reveals ancient inscriptions on the stone door.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>11</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a torch:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>It is impossible so see anything in the darkness of the cave</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Inscription">
+                <name>Read the inscriptions</name>
+                <description>work out what the inscriptions say</description>
+                <completion_msg>The inscriptions reveal a secret incantation that might open the stone door.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>11</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Intelligence</name>
+                        <value>11</value>
+                        <failure_msg>You use the torch to read the inscriptions but you cannot understand them.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Incantation">
+                <name>Say the incantation</name>
+                <description>recite the incantation and see what happens???</description>
+                <completion_msg>You recite the ancient incantation...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>11</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks></checks>
+                <rewards>
+                    <stat>
+                        <name>11:14:WEST</name>
+                        <value>1</value>
+                        <description>The stone panel shakes and slides open revealing a room behind.</description>
+                    </stat>
+                    <stat>
+                        <name>14:11:EAST</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Rune tablets">
+        <name>The three legendary Runic tablets of Azgar</name>
+        <description>Horvath wants you to collect the legendary runic tablets and return them to him</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Gather tablets">
+                <name>Gather the three stone tablets</name>
+                <description>look for three old stone tablets inscribed with runes</description>
+                <completion_msg>You found all three stone tablets!  Now go back to Horvath with them.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>TalkHorvath</name>
+                        <value>1</value>
+                        <comparator>gte</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a square stone tablet:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have all of the stone tablets</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Item:a triangular stone tablet:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have all of the stone tablets</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Item:a circular stone tablet:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have all of the stone tablets</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Return to Horvath">
+                <name>Return the three tablets to Horvath</name>
+                <description>Now go back to Horvath and see what he wants to do with teh runic tablets</description>
+                <completion_msg>You return the three legendary Runic tables of Azgar to Horvath!</completion_msg>
+                <pre_requisites>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>1</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>Horvath is not here.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+                <rewards>
+                    <stat>
+                        <name>Item:a square stone tablet:Location</name>
+                        <value>-107</value>
+                        <global>True</global>
+                        <description>Horvath gleefully takes the three stone tablets from you</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a triangular stone tablet:Location</name>
+                        <value>-107</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a circular stone tablet:Location</name>
+                        <value>-107</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>Gold</name>
+                        <value>25</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open the portcullis">
+        <name>Open the portcullis</name>
+        <description>find a way to open the portcullis that bars the entrance to the forest temple</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Pull lever">
+                <name>Pull the lever</name>
+                <description>pull the lever that is linked to a series of wooden cogs</description>
+                <completion_msg>Using your strength you pull the lever and the machinery begins to turn...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Strength</name>
+                        <value>5</value>
+                    </stat>
+                    <stat>
+                        <name>Location</name>
+                        <value>55</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Strength</name>
+                        <value>5</value>
+                        <random>3</random>
+                        <failure_msg>You need to be really strong to pull the lever!</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Gemstone Count</name>
+                        <value>4</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>You pull the lever but nothing happens!  Looks like the machinery needs some power source.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>54:56:NORTH</name>
+                        <value>1</value>
+                        <description>The portcullis is open now</description>
+                    </stat>
+                    <stat>
+                        <name>56:54:SOUTH</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open crate">
+        <name>Open the old crate</name>
+        <description>find out how to open the old crate</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Open Crate">
+                <name>Open the old crate</name>
+                <description>Work out how to open the old crate and see what is inside</description>
+                <completion_msg>Using the metal bar you prize open the old crate.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>73</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a metal bar:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't anything to open the crate with</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Gold</name>
+                        <value>100</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a flask of oil:Location</name>
+                        <value>73</value>
+                        <global>True</global>
+                        <description>there is a flask of oil in the crate</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a jar of water:Location</name>
+                        <value>73</value>
+                        <global>True</global>
+                        <description>there is a jar of water in the crate</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open rusted chest">
+        <name>Open the rusted treasure chest</name>
+        <description>open the rusted treasure chest and see what is inside</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Open Chest">
+                <name>Open the rusted chest</name>
+                <description>Open the lid of the old rusted treasure chest and see what is inside</description>
+                <completion_msg>You open the lid of the old rusted treasure chest...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>75</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Gold</name>
+                        <value>100</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a small axe:Location</name>
+                        <value>75</value>
+                        <global>True</global>
+                        <description>there is a small axe in the chest</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Chop the timber">
+        <name>Get past the fallen timber</name>
+        <description>find a way to get past the fallen timber</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Chop timber">
+                <name>Get past the fallen timber</name>
+                <description>how can you get rid of the wood?</description>
+                <completion_msg>You use the small axe to chop the fallen timber to pieces.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>72</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a small axe:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to remove the fallen timber</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>72:76:NORTH</name>
+                        <value>1</value>
+                        <description>the timber lies in pieces on the floor allowing you to pass</description>
+                    </stat>
+                    <stat>
+                        <name>76:72:SOUTH</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Torvine water">
+        <name>Help Torvine</name>
+        <description>find a way to help Torvine</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Give Water">
+                <name>Give Torvine something to help him</name>
+                <description>give Torvine something that he needs</description>
+                <completion_msg>You give the jar of stale water to Torvine who glugs it down.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>87</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a jar of water:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that will help him</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a jar of water:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>Torvine takes the jar, opens it and glugs down the stale water</description>
+                    </stat>
+                    <stat>
+                        <name>Character:Torvine:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>He thanks you for your kindness and then disappears.</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a circular stone tablet:Location</name>
+                        <value>87</value>
+                        <global>True</global>
+                        <description>He leaves something behind...</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Drain the pool">
+        <name>Operate the lever</name>
+        <description>pull the lever in the room below the grate</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Drain Water">
+                <name>Pull the lever in the room below</name>
+                <description>work out how to operate the lever in the room below the grate</description>
+                <completion_msg>You lower the grappling hook through the grate and swing it at the lever on  the wall.  The grappling hook catches on the lever and with a tug you manage to pull it.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>89</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a grappling hook:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to reach the lever with</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>90:91:DOWN</name>
+                        <value>1</value>
+                        <description>A sluice gate opens and the water from the sacred pool drains away.</description>
+                    </stat>
+                    <stat>
+                        <name>91:90:UP</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Defeat Forest Boss">
+        <name>Defeat the boss of the Forest Temple</name>
+        <description>defeat King Weed</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Fill the lamps">
+                <name>Light the lamps</name>
+                <description>if you could find a way to light the lamps...?</description>
+                <completion_msg>You pour the lamp oil into the ornate lamps mounted along the walls - now what?</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>62</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a flask of oil:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to fill the lamps with</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a flask of oil:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>You throw away the empty flask.</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Light the oil">
+                <name>Light the oil</name>
+                <description>you need to find a way to light the ornate oil lamps on the wall.</description>
+                <completion_msg>You use the flint stone to light the oil lamps which now flicker with an orange glow.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>62</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a flint:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to light the lamps</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a flint:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>The flint finally crumbles in your hands as you light the last lamp.</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Fan the flames">
+                <name>Fan the flames</name>
+                <description>you need to find a way to make the flames burner higher</description>
+                <completion_msg>You use the lady's fan to fan the flames in the lamps.  As you frantically wave the fan the lamps start to burn ferociously.   King Weed screams as the flames jump from the lamps and he catches fire.</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>62</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a fan:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to fan the flames.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Character:King Weed:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>Quickly the fire takes hold and burns King Weed until eventually there is nothing left!</description>
+                    </stat>
+                    <stat>
+                        <name>Item:the heart of the forest:Location</name>
+                        <value>62</value>
+                        <global>True</global>
+                        <description>There seems to be an object amongst the ashes of King Weed's remains on the sacred altar </description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>20</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>61:62:NORTH</name>
+                        <value>1</value>
+                        <description>The twisted roots that blocked your way out of the chamber shrivel and die leaving the way out clear once again.</description>
+                    </stat>
+                    <stat>
+                        <name>62:61:SOUTH</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Mining Quest">
+        <name>Mining Quest</name>
+        <description>Gather metal ores</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Red Ore">
+                <name>Look for a seam of red rock</name>
+                <description>mine some ore</description>
+                <completion_msg>You hammer away at the rock seam with the pick axe...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>200</value>
+                        <comparator>gte</comparator>
+                    </stat>
+                    <stat>
+                        <name>Location</name>
+                        <value>242</value>
+                        <comparator>lte</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>233</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>You can't see any suitable rock here</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Item:a pick axe:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have any mining tools</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a chunk of red ore:Location</name>
+                        <value>233</value>
+                        <global>True</global>
+                        <description>You dig out something from the rock seam</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Green Ore">
+                <name>Look for a seam of green rock</name>
+                <description>mine some ore</description>
+                <completion_msg>You hammer away at the rock seam with the pick axe...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>200</value>
+                        <comparator>gte</comparator>
+                    </stat>
+                    <stat>
+                        <name>Location</name>
+                        <value>242</value>
+                        <comparator>lte</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>240</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>You can't see any suitable rock here</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Item:a pick axe:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have any mining tools</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a chunk of green ore:Location</name>
+                        <value>240</value>
+                        <global>True</global>
+                        <description>You dig out something from the rock seam</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Yellow Ore">
+                <name>Look for a seam of yellow rock</name>
+                <description>mine some ore</description>
+                <completion_msg>You hammer away at the rock seam with the pick axe...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>200</value>
+                        <comparator>gte</comparator>
+                    </stat>
+                    <stat>
+                        <name>Location</name>
+                        <value>242</value>
+                        <comparator>lte</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>241</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>You can't see any suitable rock here</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Item:a pick axe:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have any mining tools</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a chunk of yellow ore:Location</name>
+                        <value>241</value>
+                        <global>True</global>
+                        <description>You dig out something from the rock seam</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+       </challenges>
+    </quest>
+    <quest id="Blacksmith Quest">
+        <name>Blacksmith's Quest</name>
+        <description>Get the blacksmith to make some items for you</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Red Ore">
+                <name>Find some red ore</name>
+                <description>gather some ore for the blacksmith to use</description>
+                <completion_msg>The blacksmith takes the ore from you and begins to work it in the hot fire...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>215</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a chunk of red ore:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the right materials</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a chunk of red ore:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>The red ore melts in the hot fire</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a small metal gear:Location</name>
+                        <value>215</value>
+                        <global>True</global>
+                        <description>The blacksmith crafts something</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Green Ore">
+                <name>Find some green ore</name>
+                <description>gather some ore for the blacksmith to use</description>
+                <completion_msg>The blacksmith takes the ore from you and begins to work it in the hot fire...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>215</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a chunk of green ore:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the right materials</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a chunk of green ore:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>The green ore melts in the hot fire</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a fishing hook:Location</name>
+                        <value>215</value>
+                        <global>True</global>
+                        <description>The blacksmith crafts something</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Yellow Ore">
+                <name>Find some yellow ore</name>
+                <description>gather some ore for the blacksmith to use</description>
+                <completion_msg>The blacksmith takes the ore from you and begins to work it in the hot fire...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>215</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a chunk of yellow ore:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the right materials</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a chunk of yellow ore:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>The yellow ore melts in the hot fire</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a small metal box:Location</name>
+                        <value>215</value>
+                        <global>True</global>
+                        <description>The blacksmith crafts something</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Carpenter Quest">
+        <name>Carpenter's Quest</name>
+        <description>Get the carpenter to make something for you</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Wood">
+                <name>Find some materials</name>
+                <description>gather some materials that might be useful for the carpenter</description>
+                <completion_msg>The carpenter likes the look of the wood that you have...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>221</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:some wood:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the right materials</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:some wood:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>The carpenter takes the wood and gets to work.</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a plank:Location</name>
+                        <value>221</value>
+                        <global>True</global>
+                        <description>The carpenter crafts something</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Go Fishing">
+        <name>Go Fishing!</name>
+        <description>Get some gear and go and catch something!</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Wood">
+                <name>Catch some fish</name>
+                <description>Get some gear, find a spot and reel them in!</description>
+                <completion_msg>You bait the hook and cast the line into the grey waters of the lake...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Item:a fishing rod:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>208</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>This doesn't look like a good fishing spot.</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Item:a fishing hook:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have a fishing hook.</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Item:some bait:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You cast your line and wait.......maybe you need some bait?</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:some bait:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>You get a bite...</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a big fish:Location</name>
+                        <value>208</value>
+                        <global>True</global>
+                        <description>...and reel in a fish!</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Bog Man Bait">
+        <name>Bog Man friend</name>
+        <description>see if the bog man can help you</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Worms">
+                <name>Get some worms</name>
+                <description>See if the bog man can help you</description>
+                <completion_msg>The bog man hums to himself...worms start to wriggle out of the bog around him...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>231</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a small metal box:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to collect the worms in</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:some bait:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <description>You scoop the worms into the small metal box</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Fill the bucket">
+        <name>Fill the bucket</name>
+        <description>find some water to fill the bucket</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Water">
+                <name>Fill the bucket</name>
+                <description>find some water to fill up the wooden bucket</description>
+                <completion_msg>You lower the wooden bucket into the water...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Item:an empty bucket:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>205</value>
+                        <comparator>gte</comparator>
+                        <failure_msg>There is no suitable water here</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Location</name>
+                        <value>207</value>
+                        <comparator>lte</comparator>
+                        <failure_msg>There is no suitable water here</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a full bucket:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <description>...and the lake water fills the bucket</description>
+                    </stat>
+                    <stat>
+                        <name>Item:an empty bucket:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open iron box">
+        <name>Open the iron box</name>
+        <description>find out how to open the iron box</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Open Iron Box">
+                <name>Open the iron box</name>
+                <description>Work out how to open the lid of the iron box and see what is inside</description>
+                <completion_msg>With a mighty effort you lift the lid of the iron box...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>238</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Strength</name>
+                        <value>16</value>
+                        <comparator>gte</comparator>
+                        <failure_msg>You aren't strong enough to lift the lid of the iron box</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Gold</name>
+                        <value>100</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a large metal gear:Location</name>
+                        <value>238</value>
+                        <global>True</global>
+                        <description>...there is something inside...</description>
+                    </stat>
+                    <stat>
+                        <name>Item:some ball bearings:Location</name>
+                        <value>238</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="King Fish">
+        <name>A tribute for the King</name>
+        <description>pay tribute to the King of the Mountain Village</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Tribute">
+                <name>A tribute for the King</name>
+                <description>find and present a suitable tribute</description>
+                <completion_msg>You present the King with the large fish...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>219</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a big fish:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that the King likes.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a big fish:Location</name>
+                        <value>-111</value>
+                        <global>True</global>
+                        <description>...the King gratefully accepts the large fish as a tribute...</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a small iron key:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <description>...and gives you something in return.</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open the Gate to the Mountain Temple">
+        <name>Unlock the gateway to the Mountain Temple</name>
+        <description>open the gateway that leads to the Mountain Temple</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Unlock the gateway">
+                <name>Unlock the gateway</name>
+                <description>Work out how to open the lock on the gateway</description>
+                <completion_msg>You put the small iron key into the the lock...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>242</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a small iron key:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the right key to unlock the gateway</failure_msg>
+                    </stat>
+                 </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a small iron key:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the small iron key fits the lock...</description>
+                    </stat>
+                    <stat>
+                        <name>242:243:SOUTH</name>
+                        <value>1</value>
+                        <description>...the gateway is open now!</description>
+                    </stat>
+                    <stat>
+                        <name>243:242:NORTH</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Move the boulder">
+        <name>Move the boulder</name>
+        <description>work out how to move the boulder that is blocking your way</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Unlock the gateway">
+                <name>Move the boulder</name>
+                <description>use something to move the boulder</description>
+                <completion_msg>You empty the bucket of water onto the floor..</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>251</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a full bucket:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that will move the boulder.</failure_msg>
+                    </stat>
+                 </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a full bucket:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>Item:an empty bucket:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>252:253:SOUTH</name>
+                        <value>1</value>
+                        <description>...the water freezes to ice in the cold air...</description>
+                    </stat>
+                    <stat>
+                        <name>253:252:NORTH</name>
+                        <value>1</value>
+                        <description>...the ice expands under the boulder and the boulder rolls away.</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Repair the rotation mechanism">
+        <name>Repair the ancient mechanism</name>
+        <description>work out how repair the mechanism in the centre of the room</description>
+        <linear>FALSE</linear>
+        <challenges>
+            <challenge id="large gear">
+                <name>The big axel has something missing</name>
+                <description>find the missing component</description>
+                <completion_msg>You try the large gear in the mechanism...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>244</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a large metal gear:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to fix the mechanism with</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a large metal gear:Location</name>
+                        <value>0</value>
+                        <operator>eq</operator>
+                        <global>True</global>
+                        <description>..the large gear fits onto the big axel in the mechanism</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="small gear">
+                <name>The thin axel has something missing</name>
+                <description>find the missing component</description>
+                <completion_msg>You try the small gear in the mechanism...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>244</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a small metal gear:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to fix the mechanism with</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a small metal gear:Location</name>
+                        <value>0</value>
+                        <operator>eq</operator>
+                        <global>True</global>
+                        <description>..the small gear fits onto the thin axel in the mechanism</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Rotate the room">
+        <name>Solve the puzzle of the circular room</name>
+        <description>find a way to get through the other exists</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Pull lever once">
+                <name>Pull the long lever</name>
+                <description>pull the geared lever</description>
+                <completion_msg>Using your strength you pull the lever and the room rotates...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>244</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                    <stat>
+                        <name>The big axel has something missing</name>
+                        <value>1</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                    <stat>
+                        <name>The thin axel has something missing</name>
+                        <value>1</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>244:245:WEST</name>
+                        <value>0</value>
+                        <description>The exit west closes!</description>
+                    </stat>
+                    <stat>
+                        <name>244:250:SOUTH</name>
+                        <value>1</value>
+                        <description>The exit south opens!</description>
+                    </stat>
+                    <stat>
+                        <name>250:244:NORTH</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Pull lever again">
+                <name>Pull the lever again</name>
+                <description>pull the geared lever</description>
+                <completion_msg>Using your strength you pull the lever and the room rotates...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>244</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>244:250:SOUTH</name>
+                        <value>0</value>
+                        <description>The exit south closes!</description>
+                    </stat>
+                    <stat>
+                        <name>244:247:EAST</name>
+                        <value>1</value>
+                        <description>The exit east opens!</description>
+                    </stat>
+                    <stat>
+                        <name>247:244:WEST</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Give the lever another pull">
+                <name>Give the lever another pull</name>
+                <description>pull the geared lever</description>
+                <completion_msg>Using your strength you pull the lever and the room rotates...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>244</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>244:247:EAST</name>
+                        <value>0</value>
+                        <description>The exit east closes!</description>
+                    </stat>
+                    <stat>
+                        <name>244:245:WEST</name>
+                        <value>1</value>
+                        <description>The exit west opens!</description>
+                    </stat>
+                    <stat>
+                        <name>Pull the long lever</name>
+                        <value>0</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>Pull the lever again</name>
+                        <value>0</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>Give the lever another pull</name>
+                        <value>0</value>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Turn off the spinning blade">
+        <name>The Spinning Blade Trap</name>
+        <description>work out how to disable the spinning blade trap</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="use the cog">
+                <name>Disable the spinning blade</name>
+                <description>work out how to disable the spin blade trap</description>
+                <completion_msg>You place the small cog into a slot in the mechanism...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>247</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a small cog:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to disable the trap</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Spinning Blade Trap</name>
+                        <value>1</value>
+                        <description>The spinning blade trap is switched off</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a small cog:Location</name>
+                        <value>0</value>
+                        <operator>eq</operator>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open the strange door">
+        <name>Open the strange door</name>
+        <description>work out how to open the strange door</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="BEG">
+                <name>Set the dials to Bear, Eagle and Goat</name>
+                <description>set the three dials to Bear, Eagle and Goat</description>
+                <completion_msg>You rotate the three dials...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>255</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Damage</name>
+                        <value>5</value>
+                        <random>3</random>
+                        <operator>increment</operator>
+                        <description>...the combination doesn't work.  An electric shock jolts your arm.</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="SBE">
+                <name>Set the dials to Snake, Bear and Eagle</name>
+                <description>set the three dials to Snake, Bear and Eagle</description>
+                <completion_msg>You rotate the three dials...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>255</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Damage</name>
+                        <value>5</value>
+                        <random>3</random>
+                        <operator>increment</operator>
+                        <description>...the combination doesn't work.  A dart hits you in the arm.</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="GBE">
+                <name>Set the dials to Goat, Bear and Eagle</name>
+                <description>set the three dials to Goat, Bear and Eagle</description>
+                <completion_msg>You rotate the three dials...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>255</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>255:256:EAST</name>
+                        <value>1</value>
+                        <description>...a mechanism clicks inside the door...</description>
+                    </stat>
+                    <stat>
+                        <name>256:255:WEST</name>
+                        <value>1</value>
+                        <description>...and the door swings open.</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Rebuild the statue">
+        <name>Open the xxx door</name>
+        <description>Work out how to open the xxx door</description>
+        <completion_msg>The xxx door opens</completion_msg>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="stone legs">
+                <name>Restore the missing statue's base</name>
+                <description>place the stone legs to the right hand side of the door</description>
+                <completion_msg>You place the stone legs on the right hand side of the door...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>248</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:some stone legs:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the missing base of the statue</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:some stone legs:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the stone legs fit in place.</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="stone body">
+                <name>Restore the missing statue's body</name>
+                <description>place the stone body on top of the stone legs</description>
+                <completion_msg>You place the stone body on top of the stone legs...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>248</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a stone body:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the missing body of the statue</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a stone body:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the stone body fits!</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="stone head">
+                <name>Restore the missing statue's head</name>
+                <description>place the stone head on top of the stone body</description>
+                <completion_msg>You place the stone head on top of the stone body...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>248</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a stone head:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the missing head of the statue</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a stone head:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the stone head fits!</description>
+                    </stat>
+                    <stat>
+                        <name>248:249:NORTH</name>
+                        <value>1</value>
+                        <description>...a mechanism clicks inside the door...</description>
+                    </stat>
+                    <stat>
+                        <name>249:248:SOUTH</name>
+                        <value>1</value>
+                        <description>...and the door slides open.</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Chasm rope trick">
+        <name>Get across the chasm</name>
+        <description>find a way to cross the wide chasm</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="rope trick">
+                <name>Cross the chasm</name>
+                <description>Find something to help you get across</description>
+                <completion_msg>You throw the rope up towards the cavern ceiling...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>253</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:some rope:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that will help you cross the wide chasm.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:some rope:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>The rope knots around the long stalactite...</description>
+                    </stat>
+                    <stat>
+                        <name>253:254:EAST</name>
+                        <value>1</value>
+                        <description>...you can use the rope to swing across the chasm!</description>
+                    </stat>
+                    <stat>
+                        <name>254:253:WEST</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open the Mountain Temple Boss Door">
+        <name>Unlock the great stone door in the Mountain Temple</name>
+        <description>find a key to open the great stone door</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Boss Key">
+                <name>Unlock the great stone door</name>
+                <description>Find a key to open the great stone door</description>
+                <completion_msg>You place the great mountain key into the lock in the stone door...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>250</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:the great mountain key:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the great mountain key to open the door</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:the great mountain key:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the key slides into the locking mechanism!</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>250:257:SOUTH</name>
+                        <value>1</value>
+                        <description>The great stone door opens!</description>
+                    </stat>
+                    <stat>
+                        <name>257:250:NORTH</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Defeat Mountain Boss">
+        <name>Defeat the boss of the Mountain Temple</name>
+        <description>defeat the Troll King</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Use the acid">
+                <name>Weaken the Troll</name>
+                <description>if you could find a way to weaken the troll...?</description>
+                <completion_msg>You throw the bottle of acid at the Troll King.  The bottle hits him on the head and explodes covering him in acid...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>258</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:some acid:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to weaken the great troll with.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:some acid:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Use the brearings">
+                <name>Topple the Troll</name>
+                <description>if you could find a way to make the troll fall over...?</description>
+                <completion_msg>You throw the metal ball bearings across the floor.  The Trolls runs over them and slips up crashing to the floor...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>258</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:some ball bearings:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to trip up the troll.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:some ball bearings:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Finish the Troll">
+                <name>Finish the Troll</name>
+                <description>now how can you finish off the troll?</description>
+                <completion_msg>You blow the small whistle and it emits a high pitched sound.  The stalactites on the ceiling begin to vibrate and crack.  One by one they fall from the ceiling onto the body of the Troll King...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>258</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a small whistle:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to finish off the the troll.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>XP</name>
+                        <value>20</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Character:King Rock:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>The Troll King is buried under a large pile of rocks, never to be seen again!</description>
+                    </stat>
+                    <stat>
+                        <name>Item:the heart of the mountain:Location</name>
+                        <value>258</value>
+                        <global>True</global>
+                        <description>There seems to be an object next to the pile of rocks; maybe the Troll King dropped it?</description>
+                    </stat>
+                    <stat>
+                        <name>258:257:NORTH</name>
+                        <value>1</value>
+                        <description>The rock slab that was blocking your way out slides back.</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Craftsman Quest">
+        <name>Craftsman's Quest</name>
+        <description>Get the craftsman to make something for you</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Skin">
+                <name>Craft a water skin</name>
+                <description>gather some materials and pay the craftsman to make a water skin for you</description>
+                <completion_msg>You ask the craftsman to make a water skin for you...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>315</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:some animal skin:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the right materials</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Gold</name>
+                        <value>5</value>
+                        <comparator>gte</comparator>
+                        <failure_msg>You don't have enough gold to pay the craftsman</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Gold</name>
+                        <value>-5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:some animal skin:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>The craftsman takes the animal skin and gets to work</description>
+                    </stat>
+                    <stat>
+                        <name>Item:an empty waterskin:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <description>The craftsman hands over the completed waterskin</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Fill the waterskin">
+        <name>Fill the waterskin</name>
+        <description>find some water to fill the water skin</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Water">
+                <name>Fill the waterskin</name>
+                <description>find some water to fill up the waterskin</description>
+                <completion_msg>You submerge the water skin into the oasis pool...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Item:an empty waterskin:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>311</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>There is no suitable water here</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a full waterskin:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <description>...and the oasis water fills the skin</description>
+                    </stat>
+                    <stat>
+                        <name>Item:an empty waterskin:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Sacrifice the goat">
+        <name>Honour the gods</name>
+        <description>to appease the gods make a sacrifice</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Kill goat">
+                <name>Sacrifice</name>
+                <description>make a sacrifice to honour the gods.</description>
+                <completion_msg>You grab the goat and cut its throat with the bedouin sacrificial knife...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>YousafaTalk</name>
+                        <value>1</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Location</name>
+                        <value>308</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>This is not a suitable place to make a sacrifice</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Character:Pica:Location</name>
+                        <value>308</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have a suitable sacrifice</failure_msg>
+                    </stat>
+                    <stat>
+                        <name>Item:a bedouin knife:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You grab the goat with your bare hands and attempt to kill it...but the goat struggles free.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Character:Pica:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>...the goat is dead.</description>
+                    </stat>
+                    <stat>
+                        <name>Character:Pica:RoutePosition</name>
+                        <value>9999</value>
+                        <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>Character:Yousafa:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>Maybe Yousafa will be forgiven?</description>
+                    </stat>
+                    <stat>
+                        <name>308:309:DOWN:Hidden</name>
+                        <value>0</value>
+                        <description>The stone slab at the foot of the shrine slides back.</description>
+                    </stat>
+                    <stat>
+                        <name>309:308:UP:Hidden</name>
+                        <value>0</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open casket">
+        <name>Open the casket</name>
+        <description>open the burial casket</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Open Chest">
+                <name>Open the casket</name>
+                <description>Work out how to open the burial casket and reveal the secrets of the dead!</description>
+                <completion_msg>Using your strength you open the lid of the burial casket...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Strength</name>
+                        <value>10</value>
+                    </stat>
+                    <stat>
+                        <name>Location</name>
+                        <value>309</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Strength</name>
+                        <value>10</value>
+                        <random>3</random>
+                        <failure_msg>You need to be really strong to open the casket!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a mummy:Location</name>
+                        <value>309</value>
+                        <global>True</global>
+                        <description>an ancient mummified corpse stares back at you!</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a piece of parchment:Location</name>
+                        <value>309</value>
+                        <global>True</global>
+                        <description>across the mummy's chest is a small piece of parchment</description>
+                    </stat>
+                    <stat>
+                        <name>Gold</name>
+                        <value>100</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Discover the Royal Tomb">
+        <name>Treasure Hunt</name>
+        <description>try and discover the secrets of the old parchment map</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Dig to find the entrance">
+                <name>Dig for Treasure</name>
+                <description>where the map says, dig!</description>
+                <completion_msg>You start to dig the soft sand...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>322</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                    <stat>
+                        <name>Item:a piece of parchment:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a spade:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to dig with.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>322:326:DOWN:Hidden</name>
+                        <value>0</value>
+                        <description>...you uncover a secret entrance.</description>
+                    </stat>
+                    <stat>
+                        <name>326:322:UP:Hidden</name>
+                        <value>0</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+            <challenge id="Open sarcophagus">
+                <name>Find the royal treasure</name>
+                <description>Work out how to open the sarcophagus and reveal the secrets of the dead!</description>
+                <completion_msg>With some intrepidation you open the lid of the sarcophagus...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>330</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Strength</name>
+                        <value>10</value>
+                        <random>3</random>
+                        <failure_msg>You need to be really strong to open the sarcophagus!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:the dead king:Location</name>
+                        <value>330</value>
+                        <global>True</global>
+                        <description>the death mask of the ancient King stares back at you!</description>
+                    </stat>
+                    <stat>
+                        <name>Item:some treasure:Location</name>
+                        <value>330</value>
+                        <global>True</global>
+                        <description>inside the sarcophagus is some treasure!</description>
+                    </stat>
+                    <stat>
+                        <name>Gold</name>
+                        <value>50</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Discover the Pyramid entrance">
+        <name>Archeology Hunt</name>
+        <description>try and find a way into the pyramid</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Excavate the pyramid">
+                <name>Excavate the pyramid</name>
+                <description>where the map says, dig!</description>
+                <completion_msg>You start to dig the soft sand...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>323</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                    <stat>
+                        <name>Item:the robber's map:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a spade:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything to dig with.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>323:331:DOWN:Hidden</name>
+                        <value>0</value>
+                        <description>...you uncover a secret entrance.</description>
+                    </stat>
+                    <stat>
+                        <name>331:323:UP:Hidden</name>
+                        <value>0</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Bedouin Leader quest">
+        <name>A tribute for the Bedouin Leader</name>
+        <description>pay tribute to the leader of the Bedou</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Tribute">
+                <name>A tribute for the Bedouin leader</name>
+                <description>find and present a suitable tribute</description>
+                <completion_msg>You present the Bedouin leader with the royal treasure...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>317</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:some treasure:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have anything that the King likes.</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:some treasure:Location</name>
+                        <value>-118</value>
+                        <global>True</global>
+                        <description>...the leader of the Bedouin gratefully accepts the royal treasure...</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a golden key:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <description>...and gives you something in return.</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open the door to the Desert Temple">
+        <name>Open the door to the Desert Temple</name>
+        <description>open the door that leads to the Desert Temple</description>
+        <linear>False</linear>
+        <challenges>
+            <challenge id="Unlock the golden door">
+                <name>Unlock the golden door</name>
+                <description>Work out how to unlock on the door</description>
+                <completion_msg>You put the golden key into the the lock...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>330</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:a golden key:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the right key to unlock the golden door</failure_msg>
+                    </stat>
+                 </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a golden key:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the golden key fits the lock...</description>
+                    </stat>
+                    <stat>
+                        <name>330:334:EAST</name>
+                        <value>1</value>
+                        <description>...the golden door swings open!</description>
+                    </stat>
+                    <stat>
+                        <name>334:330:WEST</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Open the Desert Temple Boss Door">
+        <name>Unlock the great sand stone door in the Desert Temple</name>
+        <description>find a key to open the great sand stone door</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Desert Boss Key">
+                <name>Unlock the great sand stone door</name>
+                <description>Find a key to open the great sand stone door</description>
+                <completion_msg>You place the great desert key into the lock in the sand stone door...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>355</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:the great desert key:Location</name>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <global>True</global>
+                        <failure_msg>You don't have the great desert key to open the door</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:the great desert key:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>the key slides into the locking mechanism!</description>
+                    </stat>
+                    <stat>
+                        <name>355:356:EAST</name>
+                        <value>1</value>
+                        <description>The great sand stone door opens!</description>
+                    </stat>
+                    <stat>
+                        <name>356:355:WEST</name>
+                        <value>1</value>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+</quests>

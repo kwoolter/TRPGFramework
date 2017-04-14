@@ -1,0 +1,12 @@
+RPGRace,Dexterity,Intelligence,Strength,Wisdom,Charisma,Constitution,Playable,Weight
+Elf,10,11,8,4,5,6,1,10
+Wood Elf,10,11,8,4,5,6,1,10
+Dwarf,6,7,11,9,10,11,1,13
+Orc,2,4,5,3,4,8,1,17
+Human,7,7,7,7,7,7,1,12
+Dragon,10,25,50,35,10,50,0,1000
+Crow,1,15,10,20,5,15,0,50
+Grass Man,10,25,50,35,10,50,0,10
+Bog Man,10,25,50,35,10,50,0,10
+Troll,10,10,100,10,10,100,0,1000
+Goat,10,10,5,10,10,5,0,3

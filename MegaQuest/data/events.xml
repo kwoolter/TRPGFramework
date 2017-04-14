@@ -1,0 +1,824 @@
+<events>
+    <event id="Dying">
+        <name>You are low on health</name>
+        <description>You are low on health!</description>
+        <pre_requisites>
+            <stat>
+                <name>HP</name>
+                <value>15</value>
+                <comparator>lte</comparator>
+            </stat>
+            <stat>
+                <name>HP</name>
+                <value>1</value>
+                <comparator>gte</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Dead">
+        <name>You are dead</name>
+        <description>You are dead!</description>
+        <pre_requisites>
+            <stat>
+                <name>HP</name>
+                <value>0</value>
+                <comparator>lte</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Level Up">
+        <name>Level up</name>
+        <description>Time to level up!</description>
+        <pre_requisites>
+            <stat>
+                <name>LevelUp</name>
+                <value>1</value>
+                <comparator>gte</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Pit bottom">
+        <name>Welcome</name>
+        <description>A sign says 'Welcome to MegaQuest'.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>500</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
+    <event id="Undergrowth worth a look">
+        <name>Explore undergrowth</name>
+        <description>There are lots of thick bushes and plants around here!</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>20</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Investigate the undergrowth</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Spike Trap">
+        <name>Spike Trap Sprung</name>
+        <description>There is an open pit here with wooden spikes covering the bottom.</description>
+        <pre_requisites>
+            <stat>
+                <name>Pit of Spikes</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Coffin slot">
+        <name>Coffin puzzle solved</name>
+        <description>There is a stone block in the coffin lid slot</description>
+        <pre_requisites>
+            <stat>
+                <name>place something in the empty slot in the coffin lid</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>25</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Wide Gap East">
+        <name>Wide gap to East</name>
+        <description>The gap looks too wide to jump across with your current attributes!</description>
+        <pre_requisites>
+            <stat>
+                <name>Dexterity</name>
+                <value>15</value>
+                <comparator>lte</comparator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>41</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Wide Gap Wast">
+        <name>Wide gap to Wast</name>
+        <description>The gap looks too wide to jump across with your current attributes!</description>
+        <pre_requisites>
+            <stat>
+                <name>Dexterity</name>
+                <value>15</value>
+                <comparator>lte</comparator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>42</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Heavy Load">
+        <name>Carrying a lot</name>
+        <description>You are carrying a lot of weight!</description>
+        <pre_requisites>
+            <stat>
+                <name>Load Pct</name>
+                <value>90</value>
+                <comparator>gte</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Too Heavy for Vines">
+        <name>Too Heavy for vines</name>
+        <description>Those vines don't look like they will hold your weight!</description>
+        <pre_requisites>
+            <stat>
+                <name>Total Weight</name>
+                <value>15</value>
+                <comparator>gte</comparator>
+            </stat>
+            <stat>
+                <name>Location</name>
+                <value>54</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Spider on the loose">
+        <name>Spider on the loose</name>
+        <description>You hear a rustling in the branches of the trees above you.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>71</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Swing Bridge is East">
+        <name>Swing Bridge is East</name>
+        <description>A wooden bridge leads East across the lake.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>80</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>80:81:EAST</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Swing Bridge is North">
+        <name>Swing Bridge is North</name>
+        <description>A wooden bridge leads North across the lake.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>84</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>84:81:NORTH</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Swing Bridge is South">
+        <name>Swing Bridge is South</name>
+        <description>A wooden bridge leads South across the lake.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>83</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>83:81:SOUTH</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Swing Bridge is West">
+        <name>Swing Bridge is West</name>
+        <description>A wooden bridge leads West across the lake.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>82</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>82:81:WEST</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Pool full of water">
+        <name>Pool full of water</name>
+        <description>As you look into the water you can make out what looks to be a sluice gate at the very bottom of the water.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>90</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>90:91:DOWN</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Panel active">
+        <name>Stone Panel Active</name>
+        <description>There are four gemstones set in the stone panel which glow with some kind of magical power.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>54</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Gemstone Count</name>
+                <value>4</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Sleeping Bear">
+        <name>Sleeping Bear</name>
+        <description>There is a large sleeping bear on the floor of the alcove.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>12</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Dusty floor in store house">
+        <name>Dusty floor</name>
+        <description>The floor of the store house is covered in a thick layer of dust.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>28</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Search the store house</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="King Weed Intro">
+        <name>King Weed Intro</name>
+        <description>King Weed sits on the sacred altar of the Forest Temple and stares at you in anger.  Green slime starts to bubble from his mouth.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>62</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Light the lamps</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="King Weed Part 1">
+        <name>King Weed Part 1</name>
+        <description>King Weed gurgles angrily at you and slime drops from his mouth and pools on the slimy floor of the chamber.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>62</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Light the lamps</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Light the oil</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="King Weed Part 2">
+        <name>King Weed Part 2</name>
+        <description>The lamps on the wall now flicker with small flames.  King Weed bellows at the sight of the flaming lamps but the flames can't reach him.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>62</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Light the lamps</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Light the oil</name>
+                <value>1</value>
+                <comparator>eeq</comparator>
+            </stat>
+            <stat>
+                <name>Fan the flames</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Missing Statue">
+        <name>Missing Statue</name>
+        <description>It appears that the statue on the right hand side of the door is missing.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>248</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Restore the missing statue's base</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
+    <event id="Missing Statue Body">
+        <name>Missing Statue Body</name>
+        <description>Only the legs of the statue right hand side of the door remain.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>248</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Restore the missing statue's base</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Restore the missing statue's body</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
+    <event id="Missing Statue Head">
+        <name>Missing Statue Head</name>
+        <description>The head of the statue on the right hand side of the door is missing.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>248</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Restore the missing statue's body</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Restore the missing statue's head</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
+    <event id="Statue restored">
+        <name>Statue restored</name>
+        <description>The statue on the right hand side of the door looks like it has been recently restored.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>248</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Restore the missing statue's head</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
+    <event id="Mechanism broken">
+        <name>Mechanism broken</name>
+        <description>There is a lever and a mechanism in the centre of the room, but parts of the mechanism are missing.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>244</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>The big axel has something missing</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+            <stat>
+                <name>The thin axel has something missing</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
+    <event id="Strange Door dials">
+        <name>Strange Door Dials</name>
+        <description>You notice three dials on the wall each with depictions of animals.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>255</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Set the dials to Goat, Bear and Eagle</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Stalactite there">
+        <name>Stalactite there</name>
+        <description>A particularly long stalactite hangs from the ceiling above.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>253</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Cross the chasm</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Chasm Rope Trick 1">
+        <name>Chasm Rope Trick 1</name>
+        <description>A rope dangles from a long stalactite on the cavern ceiling.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>253</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Cross the chasm</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Chasm Rope Trick 2">
+        <name>Chasm Rope Trick 2</name>
+        <description>A rope dangles from a long stalactite on the cavern ceiling.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>254</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Cross the chasm</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Blade Trap Mechanism">
+        <name>Blade Trap Mechanism</name>
+        <description>You notice mechanism behind a small panel on the wall.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>247</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Intelligence</name>
+                <value>15</value>
+                <comparator>gte</comparator>
+            </stat>
+            <stat>
+                <name>Spinning Blade Trap</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Troll King Intro">
+        <name>Troll King Intro</name>
+        <description>The Troll King sees you enter the room, stares at you and starts to growl!</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>258</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Weaken the Troll</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Troll King Stalactits">
+        <name>Troll King Stalactits</name>
+        <description>The ceiling of the room is covered in many stalactites.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>258</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Finish the Troll</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Troll King Part 1">
+        <name>Troll King Part 1</name>
+        <description>The Troll King screams as acid burns his skin and he frantically runs around the room.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>258</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Weaken the Troll</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Topple the Troll</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Troll King Part 2">
+        <name>Troll King Part 2</name>
+        <description>The Troll King lies flat on his back concussed.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>258</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Topple the Troll</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Finish the Troll</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+    <event id="Shrine Slab Message">
+        <name>Shrine Slab Message</name>
+        <description>The inscription on the stone slab reads "Honour the gods and you shall receive your reward".</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>308</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Sacrifice</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
+    <event id="Sphinx Map Dig Position">
+        <name>Sphinx Map Dig Position</name>
+        <description>This looks like where the old parchment map says some treasure is buried!</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>322</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Dig for Treasure</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+            <stat>
+                <name>Item:a piece of parchment:Location</name>
+                <value>-999</value>
+                <comparator>eq</comparator>
+                <global>True</global>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
+    <event id="Pyramid Map Dig Position">
+        <name>Pyramid Map Dig Position</name>
+        <description>This looks like where the robber's map says the secret entrance to the pyramid is!</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>323</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Excavate the pyramid</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+            <stat>
+                <name>Item:the robber's map:Location</name>
+                <value>-999</value>
+                <comparator>eq</comparator>
+                <global>True</global>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
+    <event id="Tomb Guardians">
+        <name>Tomb Guardians</name>
+        <description>Two statues guard the entrance to the royal tomb.  Their eyes seem to follow you as you move.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>327</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
+</events>
