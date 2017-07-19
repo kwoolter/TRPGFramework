@@ -6,7 +6,11 @@ from .RPGGame import *
 
 
 class RPGCLI(cmd.Cmd):
-    intro = "Welcome to the RPG CLI.\nType 'start' to get going!\nType 'new' to create a new character.\nType 'help' to see available commands.\n"
+    intro = "Welcome to the RPG CLI.\n" \
+            "Type 'start' to get going!\n" \
+            "Type 'char' to see current character\n" \
+            "Type 'new' to create a new character.\n" \
+            "Type 'help' to see available commands.\n"
     prompt = "What next?"
 
     def __init__(self, new_game : RPGGame):
