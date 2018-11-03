@@ -766,11 +766,6 @@
                 </checks>
                 <rewards>
                     <stat>
-                        <name>XP</name>
-                        <value>5</value>
-                        <operator>increment</operator>
-                    </stat>
-                    <stat>
                         <name>Location</name>
                         <value>40</value>
                         <description>Snuggly takes you to the top of a far away mountain</description>
@@ -785,6 +780,12 @@
                         <name>Character:Snuggly:RoutePosition</name>
                         <value>3</value>
                         <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>Fly down with Snuggly</name>
+                        <value>0</value>
+                        <global>False</global>
                         <description>***</description>
                     </stat>
                 </rewards>
@@ -818,11 +819,6 @@
                 </checks>
                 <rewards>
                     <stat>
-                        <name>XP</name>
-                        <value>5</value>
-                        <operator>increment</operator>
-                    </stat>
-                    <stat>
                         <name>Location</name>
                         <value>110</value>
                         <description>Sunggly takes you back down to the big tree in the forest</description>
@@ -837,6 +833,12 @@
                         <name>Character:Snuggly:RoutePosition</name>
                         <value>0</value>
                         <global>True</global>
+                        <description>***</description>
+                    </stat>
+                    <stat>
+                        <name>Fly up with Snuggly</name>
+                        <value>0</value>
+                        <global>False</global>
                         <description>***</description>
                     </stat>
                 </rewards>
