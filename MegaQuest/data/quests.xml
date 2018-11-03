@@ -1329,7 +1329,7 @@
             <challenge id="Drain Water">
                 <name>Pull the lever in the room below</name>
                 <description>work out how to operate the lever in the room below the grate</description>
-                <completion_msg>You lower the grappling hook through the grate and swing it at the lever on  the wall.  The grappling hook catches on the lever and with a tug you manage to pull it.</completion_msg>
+                <completion_msg>You lower the grappling hook through the grate and swing it at the lever on the wall.  The grappling hook catches on the lever and with a tug you manage to pull it.</completion_msg>
                 <pre_requisites>
                     <stat>
                         <name>Location</name>

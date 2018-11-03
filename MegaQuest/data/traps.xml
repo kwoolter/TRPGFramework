@@ -2,7 +2,9 @@
     <trap id="Pit">
         <name>Pit of Spikes</name>
         <one_shot>True</one_shot>
-        <description>You tread on some earth that gives way under your feet revealing a concealed pit that has deadly spikes at the bottom...</description>
+        <description>You tread on some earth that gives way under your feet revealing a concealed pit that has deadly
+            spikes at the bottom...
+        </description>
         <completion_msg>...and you fall into the pit injuring yourself.</completion_msg>
         <pre_requisites>
             <stat>
@@ -61,7 +63,9 @@
                 <value>-999</value>
                 <comparator>neq</comparator>
                 <global>True</global>
-                <failure_msg>...quickly you play some notes on the wooden flute.  The bear is soothed and goes back to sleep.</failure_msg>
+                <failure_msg>...quickly you play some notes on the wooden flute. The bear is soothed and goes back to
+                    sleep.
+                </failure_msg>
             </stat>
         </checks>
         <rewards>
@@ -86,7 +90,7 @@
     <trap id="Long Fall">
         <name>Dodgy Walkway</name>
         <one_shot>False</one_shot>
-        <description>You put your foot on a rotten piece of wood in the walkway.  The wood snaps...</description>
+        <description>You put your foot on a rotten piece of wood in the walkway. The wood snaps...</description>
         <completion_msg>...and you fall helplessly off the walkway.</completion_msg>
         <pre_requisites>
             <stat>
@@ -169,7 +173,9 @@
     <trap id="Flame Trap">
         <name>Flame Trap</name>
         <one_shot>False</one_shot>
-        <description>You put your foot on stone that triggers a blast of flame to erupt from a hole in the stone wall...</description>
+        <description>You put your foot on stone that triggers a blast of flame to erupt from a hole in the stone
+            wall...
+        </description>
         <completion_msg>...you are badly burnt</completion_msg>
         <pre_requisites>
             <stat>
@@ -214,7 +220,9 @@
         <name>Long Ledge Jump East</name>
         <one_shot>False</one_shot>
         <description>You attempt to jump across the large gap between ledges...</description>
-        <completion_msg>...you jump through the air but you don't make it to the other side and fall headlong down the mountainside.</completion_msg>
+        <completion_msg>...you jump through the air but you don't make it to the other side and fall headlong down the
+            mountainside.
+        </completion_msg>
         <pre_requisites>
             <stat>
                 <name>Location</name>
@@ -258,7 +266,9 @@
         <name>Long Ledge Jump West</name>
         <one_shot>False</one_shot>
         <description>You attempt to jump across the large gap between ledges...</description>
-        <completion_msg>...you jump through the air but you don't make it to the other side and fall headlong down the mountainside.</completion_msg>
+        <completion_msg>...you jump through the air but you don't make it to the other side and fall headlong down the
+            mountainside.
+        </completion_msg>
         <pre_requisites>
             <stat>
                 <name>Location</name>
@@ -333,14 +343,17 @@
                 <value>-999</value>
                 <comparator>eq</comparator>
                 <global>True</global>
-                <failure_msg>...you think to yourself 'Maybe I should take another look around before I go in here.'</failure_msg>
+                <failure_msg>...you think to yourself 'Maybe I should take another look around before I go in here.'
+                </failure_msg>
             </stat>
             <stat>
                 <name>Item:a flask of oil:Location</name>
                 <value>-999</value>
                 <comparator>eq</comparator>
                 <global>True</global>
-                <failure_msg>...you think to yourself 'Maybe there is something that I have forgotten to bring with me?'</failure_msg>
+                <failure_msg>...you think to yourself 'Maybe there is something that I have forgotten to bring with
+                    me?'
+                </failure_msg>
             </stat>
         </checks>
         <rewards>
@@ -350,8 +363,8 @@
                 <description>***</description>
             </stat>
         </rewards>
-   </trap>
-   <trap id="Forest Boss Turn Back">
+    </trap>
+    <trap id="Forest Boss Turn Back">
         <name>Forest Boss Turn Back</name>
         <one_shot>False</one_shot>
         <description>...you tip toe along the tunnel...</description>
@@ -382,8 +395,8 @@
                 <description>...and head back to the sunny courtyard.</description>
             </stat>
         </rewards>
-   </trap>
-   <trap id="Forest Boss Trap Door">
+    </trap>
+    <trap id="Forest Boss Trap Door">
         <name>Forest Boss Trap Door</name>
         <one_shot>True</one_shot>
         <description>You enter the large chamber......</description>
@@ -419,8 +432,8 @@
                 <description>***</description>
             </stat>
         </rewards>
-   </trap>
-   <trap id="Forest Boss Poison Trap">
+    </trap>
+    <trap id="Forest Boss Poison Trap">
         <name>Forest Boss Poison Trap</name>
         <one_shot>False</one_shot>
         <description>You step in some slime....</description>
@@ -457,11 +470,13 @@
                 <random>2</random>
             </stat>
         </rewards>
-   </trap>
-   <trap id="Spider Trap West">
+    </trap>
+    <trap id="Spider Trap West">
         <name>Spider Trap West</name>
         <one_shot>False</one_shot>
-        <description>You make your way across the slimy stone stepping stones but a giant spider drops down from the overhanging tree branches...</description>
+        <description>You make your way across the slimey stone stepping stones but a giant spider drops down from the
+            overhanging tree branches...
+        </description>
         <completion_msg>...the spider bites you</completion_msg>
         <pre_requisites>
             <stat>
@@ -481,7 +496,8 @@
                 <value>-999</value>
                 <comparator>neq</comparator>
                 <global>True</global>
-                <failure_msg>...you brandish the torch at the spider and it retreats from the flames in fear.</failure_msg>
+                <failure_msg>...you brandish the torch at the spider and it retreats from the flames in fear.
+                </failure_msg>
             </stat>
         </checks>
         <rewards>
@@ -502,8 +518,8 @@
                 <description>you can't get past the nasty giant spider and retreat</description>
             </stat>
         </rewards>
-   </trap>
-   <trap id="Swing Bridge to North South">
+    </trap>
+    <trap id="Swing Bridge to North South">
         <name>Swing Bridge to North South</name>
         <one_shot>False</one_shot>
         <description>You start to walk across the bridge...</description>
@@ -564,8 +580,70 @@
                 <description>***</description>
             </stat>
         </rewards>
-   </trap>
-   <trap id="Swing Bridge to East West">
+    </trap>
+    <trap id="Swing Bridge Reset">
+        <name>Swing Bridge Reset</name>
+        <one_shot>False</one_shot>
+        <description>As you approach the edge of the lake...</description>
+        <completion_msg>...a wooden bridge rotates.</completion_msg>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>80</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>OldLocation</name>
+                <value>81</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+            <stat>
+                <name>81:80:WEST</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:82:EAST</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:82:EAST</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>82:81:WEST</name>
+                <value>1</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:83:NORTH</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>83:81:SOUTH</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>81:84:SOUTH</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+            <stat>
+                <name>84:81:NORTH</name>
+                <value>0</value>
+                <description>***</description>
+            </stat>
+        </rewards>
+    </trap>
+    <trap id="Swing Bridge to East West">
         <name>Swing Bridge to East West</name>
         <one_shot>False</one_shot>
         <description>You start to walk across the bridge...</description>
@@ -626,7 +704,7 @@
                 <description>***</description>
             </stat>
         </rewards>
-   </trap>
+    </trap>
     <trap id="Bog Trap">
         <name>Bog Trap</name>
         <one_shot>False</one_shot>
@@ -650,7 +728,9 @@
                 <value>-999</value>
                 <comparator>neq</comparator>
                 <global>True</global>
-                <failure_msg>...quickly you lay out the wooden plank across the bog and use it as a bridge to get to the other side</failure_msg>
+                <failure_msg>...quickly you lay out the wooden plank across the bog and use it as a bridge to get to the
+                    other side
+                </failure_msg>
             </stat>
         </checks>
         <rewards>
@@ -745,14 +825,17 @@
                 <value>-999</value>
                 <comparator>eq</comparator>
                 <global>True</global>
-                <failure_msg>...you think to yourself 'Maybe I should take another look around before I go in here.'</failure_msg>
+                <failure_msg>...you think to yourself 'Maybe I should take another look around before I go in here.'
+                </failure_msg>
             </stat>
             <stat>
                 <name>Item:a small whistle:Location</name>
                 <value>-999</value>
                 <comparator>eq</comparator>
                 <global>True</global>
-                <failure_msg>...you think to yourself 'Maybe there is something that I have forgotten to bring with me?'</failure_msg>
+                <failure_msg>...you think to yourself 'Maybe there is something that I have forgotten to bring with
+                    me?'
+                </failure_msg>
             </stat>
         </checks>
         <rewards>
@@ -762,8 +845,8 @@
                 <description>***</description>
             </stat>
         </rewards>
-   </trap>
-   <trap id="Mountain Boss Trap Door">
+    </trap>
+    <trap id="Mountain Boss Trap Door">
         <name>Mountain Boss Trap Door</name>
         <one_shot>True</one_shot>
         <description>You enter the large chamber......</description>
@@ -794,8 +877,8 @@
                 <description>... your way out is now blocked by a large slab of rock!</description>
             </stat>
         </rewards>
-   </trap>
-   <trap id="Mountain Boss Turn Back">
+    </trap>
+    <trap id="Mountain Boss Turn Back">
         <name>Mountain Boss Turn Back</name>
         <one_shot>False</one_shot>
         <description>...you tip toe along the tunnel...</description>
@@ -826,7 +909,7 @@
                 <description>...and head back to the grand chamber.</description>
             </stat>
         </rewards>
-   </trap>
+    </trap>
     <trap id="Desert Trap">
         <name>Desert Trap</name>
         <one_shot>False</one_shot>
@@ -850,7 +933,9 @@
                 <value>-999</value>
                 <comparator>neq</comparator>
                 <global>True</global>
-                <failure_msg>...the heat makes you thirsty but your water supplies keep you going across the scorching sands.</failure_msg>
+                <failure_msg>...the heat makes you thirsty but your water supplies keep you going across the scorching
+                    sands.
+                </failure_msg>
             </stat>
         </checks>
         <rewards>
@@ -900,7 +985,9 @@
                 <name>Charisma</name>
                 <value>25</value>
                 <comparator>lte</comparator>
-                <failure_msg>...your powerful charisma convinces the guardians that you are indeed royalty and they let you pass.</failure_msg>
+                <failure_msg>...your powerful charisma convinces the guardians that you are indeed royalty and they let
+                    you pass.
+                </failure_msg>
             </stat>
         </checks>
         <rewards>
