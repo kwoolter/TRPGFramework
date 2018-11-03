@@ -82,6 +82,46 @@
         <rewards>
         </rewards>
     </event>
+    <event id="Is this really a dead end?">
+        <name>Is this a dead end?</name>
+        <description>This looks like a dead end.  You have come all of this way for nothing!</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>43</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Investigate the room</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
+        <event id="Portal opened">
+        <name>Portal is open</name>
+        <description>A warm breeze blows through the magic portal and the chamber fills with unfamiliar scents</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>43</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Investigate the room</name>
+                <value>1</value>
+                <comparator>eq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks>
+        </checks>
+        <rewards>
+        </rewards>
+    </event>
     <event id="Spike Trap">
         <name>Spike Trap Sprung</name>
         <description>There is an open pit here with wooden spikes covering the bottom.</description>

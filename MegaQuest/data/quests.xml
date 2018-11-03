@@ -1,4 +1,50 @@
 <quests>
+    <quest id="Find a way">
+        <name>Is there a way further?</name>
+        <description>is there some way to go further?</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Find the way">
+                <name>Investigate the room</name>
+                <description>is there some way to go further?</description>
+                <completion_msg>You use the portal spell...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Location</name>
+                        <value>43</value>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                    <stat>
+                        <name>Item:the portal spell:Location</name>
+                        <global>True</global>
+                        <value>-999</value>
+                        <comparator>eq</comparator>
+                        <failure_msg>You don't have anything that can help you here!</failure_msg>
+                    </stat>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>43:44:WEST:Hidden</name>
+                        <value>0</value>
+                        <description>A magical entrance appears in the wall to the West!</description>
+                    </stat>
+                    <stat>
+                        <name>Item:the portal spell:Location</name>
+                        <global>True</global>
+                        <value>0</value>
+                        <description>The portal spell vanishes!</description>
+                    </stat>
+                    <stat>
+                        <name>XP</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
     <quest id="Explore undergrowth">
         <name>Explore the undergrowth</name>
         <description>investigate the plants and bushes to see if you can find anything</description>

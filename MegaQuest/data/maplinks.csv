@@ -39,7 +39,7 @@ FromID,ToID,Direction,Description,Lockable,Locked,LockedDescription,Reversible,H
 40,41,DOWN,via some rough stone steps,FALSE,,,TRUE,FALSE
 41,42,EAST,across a very wide gap,FALSE,,,TRUE,FALSE
 42,43,SOUTH,through a tight crack in the rock,FALSE,,,TRUE,FALSE
-43,44,WEST,,TRUE,TRUE,there appears to be no way beyond here,TRUE,FALSE
+43,44,WEST,through a magic portal,FALSE,FALSE,,TRUE,TRUE
 50,51,NORTH,,FALSE,,,TRUE,FALSE
 51,52,NORTH,,FALSE,,,TRUE,FALSE
 52,53,NORTH,through an archway,TRUE,TRUE,a locked gate bars the entrance,TRUE,FALSE
