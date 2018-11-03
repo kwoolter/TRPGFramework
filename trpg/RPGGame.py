@@ -265,6 +265,10 @@ class RPGGame(object):
 
             self.print_current_location()
 
+            # Hack some stats
+            # self._game_state.update_stat("Character:Aarlok:Fly up with Snuggly", 0)
+            # self._game_state.update_stat("Character:Aarlok:Fly down with Snuggly", 0)
+
     def start(self):
 
         if self._state == RPGGame.STARTED:

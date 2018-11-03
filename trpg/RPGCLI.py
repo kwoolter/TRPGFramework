@@ -142,6 +142,31 @@ class RPGCLI(cmd.Cmd):
         except Exception as err:
             print(str(err))
 
+    def do_jump(self, args):
+        # Force a player character to a new location
+        # Useful if you need to fix bugs
+        try:
+            print("Jumping to {0}".format(args))
+            self.game.current_location = args
+            self.game.print_current_location()
+        except Exception as err:
+            print(str(err))
+
+    def do_hack(self, args):
+        # Hack a stat in the game stat engine
+        # Useful if you need to fix bugs
+        try:
+            stat_name = input("Stat name?:")
+            stat_value = int(input("Stat value?:"))
+            self.game.state.update_stat(stat_name, stat_value)
+            stat = self.game.state.get_stat(stat_name)
+            print("{}".format(stat))
+
+        except Exception as err:
+            print(str(err))
+
+
+
     def do_quit(self, arg):
         'Quit the game.'
         if confirm("Are you sure you want to quit?"):

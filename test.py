@@ -12,14 +12,14 @@ except ImportError:
 
 def main():
 
-    logging.basicConfig(level = logging.WARNING)
+    logging.basicConfig(level = logging.ERROR)
 
     new_player = trpg.Player("Keith")
 
     player_character = trpg.Character("Aarlok", "Dwarf", "Warrior")
     game = trpg.RPGGame("MegaQuest")
     game.start_location = 10000
-    #game.start_location = 334
+    #game.start_location = 110
 
     game.load_player(new_player)
     game.load_player_character(player_character)
