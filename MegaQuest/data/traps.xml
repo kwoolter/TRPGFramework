@@ -589,7 +589,7 @@
         <pre_requisites>
             <stat>
                 <name>Location</name>
-                <value>80</value>
+                <value>801</value>
                 <comparator>eq</comparator>
             </stat>
             <stat>
@@ -669,7 +669,7 @@
                 <description>***</description>
             </stat>
             <stat>
-                <name>81:82:EAST</name>
+                <name>80:81:EAST</name>
                 <value>1</value>
                 <description>***</description>
             </stat>
