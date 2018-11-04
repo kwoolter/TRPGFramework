@@ -38,6 +38,8 @@ class HP(RPGDerivedStat):
     def calculate(self):
         max_HP = self.get_dependency_value("Max HP")
         dmg = self.get_dependency_value("Damage")
+        if dmg < 0:
+            dmg = 0
         return max_HP - dmg
 
 class MaxLoad(RPGDerivedStat):
@@ -72,8 +74,6 @@ class LoadPct(RPGDerivedStat):
         max_load = self.get_dependency_value("Max Load")
         item_weight = self.get_dependency_value("Item Weight")
         return item_weight*100/max_load
-
-
 
 
 # A Lock-picking Skill stat based on Dex and Int
@@ -111,7 +111,7 @@ class HasMoved(RPGDerivedStat):
 
 class XPToLevel(RPGDerivedStat):
 
-    _xp_levels = [5,10,15,12]
+    _xp_levels = [5,10,15,20,25,30,40,50,75,100]
 
     def __init__(self, owner : RPGObject):
         super(XPToLevel,self).__init__("XPToLevel", "Attributes", owner)

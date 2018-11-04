@@ -432,7 +432,7 @@ class RPGGame(object):
         quests = self._quests.get_available_quests(self._player_character)
 
         # Get the user to pick which quest they want...
-        quest = pick("quest", quests, auto_pick=True)
+        quest = pick("quest", quests, auto_pick=False)
         print("Quest %s - %s." % (quest.name, quest.description))
 
         # ..and then get them to pick the challenge they want to attempt

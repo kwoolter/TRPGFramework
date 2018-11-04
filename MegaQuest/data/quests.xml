@@ -120,6 +120,112 @@
             </challenge>
         </challenges>
     </quest>
+        <quest id="Drink the dexterity potion">
+        <name>Drink the dexterity potion</name>
+        <description>drink the potion and see what happens</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Drink DEX Potion">
+                <name>Drink the potion</name>
+                <description>Drink the dexterity potion and see what happens!</description>
+                <completion_msg>You cautiously take the cork out of the vial and then drink all of the foul tasting contents in one glug...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Item:a potion of dexterity:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Dexterity</name>
+                        <value>5</value>
+                        <operator>increment</operator>
+                    </stat>
+                    <stat>
+                        <name>Item:a potion bottle:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>You through away the empty vial</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+        <quest id="Eat the bread">
+        <name>Eat the bread</name>
+        <description>eat the small loaf of bread</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Eat the bread">
+                <name>Eat the small loaf</name>
+                <description>Eat the small loaf of bread even if it is a bit mouldy!</description>
+                <completion_msg>You pull several dry and crusted chunks off the loaf and chew them...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Item:a small loaf of bread:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Item:a small loaf of bread:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>You eat the bread which is a bit old, mouldy and chewy</description>
+                    </stat>
+                    <stat>
+                        <name>Damage</name>
+                        <value>-5</value>
+                        <description>You stomach groans a bit but you feel slightly better</description>
+                        <operator>increment</operator>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
+    <quest id="Drink the healing draft">
+        <name>Drink the healing draft</name>
+        <description>drink the draft and see what happens</description>
+        <linear>True</linear>
+        <challenges>
+            <challenge id="Drink healing draught">
+                <name>Drink the health potion</name>
+                <description>Drink the healing draught and see what happens!</description>
+                <completion_msg>You cautiously take the cork out of the bottle and then drink all of the foul tasting contents in one glug...</completion_msg>
+                <pre_requisites>
+                    <stat>
+                        <name>Item:a healing draught:Location</name>
+                        <value>-999</value>
+                        <global>True</global>
+                        <comparator>eq</comparator>
+                    </stat>
+                </pre_requisites>
+                <checks>
+                </checks>
+                <rewards>
+                    <stat>
+                        <name>Damage</name>
+                        <value>0</value>
+                        <description>Your wounds are miraculously healed!</description>
+                    </stat>
+                    <stat>
+                        <name>Item:a healing draught:Location</name>
+                        <value>0</value>
+                        <global>True</global>
+                        <description>You throw away the empty bottle</description>
+                    </stat>
+                </rewards>
+            </challenge>
+        </challenges>
+    </quest>
     <quest id="Open chest">
         <name>Open the treasure chest</name>
         <description>start your adventure with some goodies</description>
@@ -1031,7 +1137,7 @@
             </challenge>
             <challenge id="Return to Horvath">
                 <name>Return the three tablets to Horvath</name>
-                <description>Now go back to Horvath and see what he wants to do with teh runic tablets</description>
+                <description>Now go back to Horvath and see what he wants to do with the runic tablets</description>
                 <completion_msg>You return the three legendary Runic tables of Azgar to Horvath!</completion_msg>
                 <pre_requisites>
                 </pre_requisites>

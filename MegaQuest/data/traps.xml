@@ -16,7 +16,7 @@
         <checks>
             <stat>
                 <name>Dexterity</name>
-                <value>10</value>
+                <value>15</value>
                 <comparator>lte</comparator>
                 <failure_msg>...but you jump to safety.</failure_msg>
             </stat>
@@ -577,68 +577,6 @@
             <stat>
                 <name>84:81:NORTH</name>
                 <value>1</value>
-                <description>***</description>
-            </stat>
-        </rewards>
-    </trap>
-    <trap id="Swing Bridge Reset">
-        <name>Swing Bridge Reset</name>
-        <one_shot>False</one_shot>
-        <description>As you approach the edge of the lake...</description>
-        <completion_msg>...a wooden bridge rotates.</completion_msg>
-        <pre_requisites>
-            <stat>
-                <name>Location</name>
-                <value>801</value>
-                <comparator>eq</comparator>
-            </stat>
-            <stat>
-                <name>OldLocation</name>
-                <value>81</value>
-                <comparator>eq</comparator>
-            </stat>
-        </pre_requisites>
-        <checks>
-        </checks>
-        <rewards>
-            <stat>
-                <name>81:80:WEST</name>
-                <value>1</value>
-                <description>***</description>
-            </stat>
-            <stat>
-                <name>81:82:EAST</name>
-                <value>1</value>
-                <description>***</description>
-            </stat>
-            <stat>
-                <name>81:82:EAST</name>
-                <value>1</value>
-                <description>***</description>
-            </stat>
-            <stat>
-                <name>82:81:WEST</name>
-                <value>1</value>
-                <description>***</description>
-            </stat>
-            <stat>
-                <name>81:83:NORTH</name>
-                <value>0</value>
-                <description>***</description>
-            </stat>
-            <stat>
-                <name>83:81:SOUTH</name>
-                <value>0</value>
-                <description>***</description>
-            </stat>
-            <stat>
-                <name>81:84:SOUTH</name>
-                <value>0</value>
-                <description>***</description>
-            </stat>
-            <stat>
-                <name>84:81:NORTH</name>
-                <value>0</value>
                 <description>***</description>
             </stat>
         </rewards>
