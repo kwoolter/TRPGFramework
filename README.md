@@ -51,3 +51,17 @@ Aarlok the Dwarf Warrior (created 07/07/2017 19:47:54) inventory id=-999 type=PC
 	Max HP:32
 What next?
 ```
+### Maps
+
+<table>
+<tr>
+<td>
+<img height=300 width=370 src="https://github.com/kwoolter/TRPGFramework/blob/master/MegaQuest/screenshots/map2.jpg" alt="game2">
+</td>
+</tr>
+<tr>
+<td>
+<img height=300 width=370 src="https://github.com/kwoolter/TRPGFramework/blob/master/MegaQuest/screenshots/map3.jpg" alt="game3">
+</td>
+</tr>
+</table>
