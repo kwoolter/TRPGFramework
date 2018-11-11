@@ -687,7 +687,7 @@
     <trap id="Spinning Blade Trap">
         <name>Spinning Blade Trap</name>
         <one_shot>False</one_shot>
-        <description>You put your foot on stone that triggers a spinning blade to whir towards you...</description>
+        <description>You put your foot on a stone pressure pad that triggers a spinning blade to whir towards you...</description>
         <completion_msg>...you are cut by the spinning blade.</completion_msg>
         <pre_requisites>
             <stat>
@@ -771,8 +771,7 @@
                 <value>-999</value>
                 <comparator>eq</comparator>
                 <global>True</global>
-                <failure_msg>...you think to yourself 'Maybe there is something that I have forgotten to bring with
-                    me?'
+                <failure_msg>...you think to yourself 'Maybe there is something that I have forgotten to bring with me?'
                 </failure_msg>
             </stat>
         </checks>

@@ -2031,8 +2031,6 @@
                         <comparator>eq</comparator>
                         <global>True</global>
                     </stat>
-                </pre_requisites>
-                <checks>
                     <stat>
                         <name>Location</name>
                         <value>205</value>
@@ -2045,6 +2043,8 @@
                         <comparator>lte</comparator>
                         <failure_msg>There is no suitable water here</failure_msg>
                     </stat>
+                </pre_requisites>
+                <checks>
                 </checks>
                 <rewards>
                     <stat>
