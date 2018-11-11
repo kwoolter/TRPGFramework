@@ -712,6 +712,11 @@ class RPGGame(object):
 
 
     def tick(self):
+
+        # Check if the game has been started yet
+        if self._state != RPGGame.STARTED:
+            raise (Exception("%s game not ready.  You need to 'start'," % self.name))
+
         for npc in self._npcs.get_characters():
             npc.tick()
 
