@@ -18,7 +18,7 @@ def main():
 
     player_character = trpg.Character("Aarlok", "Dwarf", "Warrior")
     game = trpg.RPGGame("MegaQuest")
-    game.start_location = 10000
+    game.save = 10000
     #game.start_location = 110
 
     game.load_player(new_player)

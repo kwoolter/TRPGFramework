@@ -482,6 +482,24 @@
         <rewards>
         </rewards>
     </event>
+    <event id="Blade Trap Active">
+        <name>Blade Trap Active</name>
+        <description>You hear a faint whirring noise to the east.</description>
+        <pre_requisites>
+            <stat>
+                <name>Location</name>
+                <value>247</value>
+                <comparator>eq</comparator>
+            </stat>
+            <stat>
+                <name>Disable the spinning blade</name>
+                <value>1</value>
+                <comparator>neq</comparator>
+            </stat>
+        </pre_requisites>
+        <checks></checks>
+        <rewards></rewards>
+    </event>
     <event id="Missing Statue">
         <name>Missing Statue</name>
         <description>It appears that the statue on the right hand side of the door is missing.</description>

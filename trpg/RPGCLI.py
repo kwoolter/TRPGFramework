@@ -152,6 +152,7 @@ class RPGCLI(cmd.Cmd):
         except Exception as err:
             print(str(err))
 
+
     def do_hack(self, args):
         # Hack a stat in the game stat engine
         # Useful if you need to fix bugs
@@ -165,6 +166,17 @@ class RPGCLI(cmd.Cmd):
         except Exception as err:
             print(str(err))
 
+
+    def do_stat(self, args):
+        # get a stat from the game stat engine
+        # Useful if you need to fix bugs
+        try:
+            stat_name = input("Stat name?:")
+            stat = self.game.state.get_stat(stat_name)
+            print("{}".format(stat))
+
+        except Exception as err:
+            print(str(err))
 
 
     def do_quit(self, arg):
@@ -195,7 +207,10 @@ class RPGCLI(cmd.Cmd):
 
     def do_load(self,arg):
         'Load a previously saved game'
-        self.game.game_load()
+        try:
+            self.game.game_load()
+        except Exception as err:
+            print(str(err))
 
 
 def main():

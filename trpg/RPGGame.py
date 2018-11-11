@@ -181,6 +181,7 @@ class RPGGame(object):
         logging.info("%s.load_player(): Welcome Character %s to the RPGGame %s!", \
                      __class__, str(self._player_character), self.name)
 
+
     def load_quests(self, quest_file_name : str):
         self._quests = QuestFactory(RPGGame.GAME_DATA_DIR + quest_file_name)
         self._quests.load()
@@ -234,6 +235,7 @@ class RPGGame(object):
     def game_save(self):
         file_name = RPGGame.SAVE_GAME_DIR + self._player_character.name + ".rpg"
         game_file = open(file_name, "wb")
+        pickle.dump(self._player_character, game_file)
         pickle.dump(self._game_state, game_file)
         game_file.close()
 
@@ -255,6 +257,9 @@ class RPGGame(object):
 
         if confirm("Are you sure you want to load %s?" % character_file):
             game_file = open(file_name, "rb")
+            new_player_character = pickle.load(game_file)
+            self._player_character = new_player_character
+
             new_game_stat = pickle.load(game_file)
             self._game_state.remove_all()
             self._game_state.load_stats(new_game_stat.get_all_stats())

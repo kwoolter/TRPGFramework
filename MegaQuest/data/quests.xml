@@ -2256,12 +2256,12 @@
                         <description>***</description>
                     </stat>
                     <stat>
-                        <name>252:253:SOUTH</name>
+                        <name>251:252:SOUTH</name>
                         <value>1</value>
                         <description>...the water freezes to ice in the cold air...</description>
                     </stat>
                     <stat>
-                        <name>253:252:NORTH</name>
+                        <name>252:251:NORTH</name>
                         <value>1</value>
                         <description>...the ice expands under the boulder and the boulder rolls away.</description>
                     </stat>
@@ -2603,9 +2603,9 @@
         </challenges>
     </quest>
     <quest id="Rebuild the statue">
-        <name>Open the xxx door</name>
-        <description>Work out how to open the xxx door</description>
-        <completion_msg>The xxx door opens</completion_msg>
+        <name>Open the great door</name>
+        <description>Work out how to open the great door</description>
+        <completion_msg>The great door opens</completion_msg>
         <linear>True</linear>
         <challenges>
             <challenge id="stone legs">
